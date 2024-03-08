@@ -1,0 +1,280 @@
+{% load static %}
+
+{% for listing in listings %}
+    <div>
+        <h2>{{ listing.name }}</h2>
+        <p>City: {{ listing.city }}</p>
+        <p>Type: {{ listing.get_property_type_display }}</p>
+        <p>Bedrooms: {{ listing.num_bedrooms }}</p>
+        <p>Price: {{ listing.price_min }} - {{ listing.price_max }}</p>
+    </div>
+{% empty %}
+    <p>No listings found.</p>
+{% endfor %} 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Inicio</title>
+
+   <!-- Enlace al archivo de fuente impresionante (font awesome)  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- Enlace al archivo de estilo personalizado  -->
+   <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+   
+<!-- Comienza la sección de encabezado -->
+
+<header class="header">
+
+   <nav class="navbar nav-1">
+      <section class="flex">
+         <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
+      </section>
+   </nav>
+
+   <nav class="navbar nav-2">
+      <section class="flex">
+         <div id="menu-btn" class="fas fa-bars"></div>
+
+         <div class="menu">
+            <ul>
+               <li><a href="#">Novedades</a></li>
+               <li><a href="#">Publicar Departamento</a></li>
+               <li><a href="#">Alquilar<i class="fas fa-angle-down"></i></a>
+                  <ul>
+                     <li><a href="#">Departamento</a></li>
+                     <li><a href="#">Casa</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
+                  <ul>
+                     <li><a href="{% url 'about' %}">Sobre nosotros</a></li>
+                     <li><a href="{% url 'contact' %}">Contáctanos</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+
+         <ul>            
+            <li><a href="{% url 'login' %}">Inicia sesión</a></li>
+            <li><a href="{% url 'register' %}">Regístrate</a></li>
+         </ul>
+      </section>
+   </nav>
+
+</header>
+
+<!-- Termina la sección de encabezado -->
+
+<!-- Comienza la sección de "Inicio" -->
+
+<div class="home">
+
+   <section class="center">
+
+      <form action="{% url 'search' %}" method="post">
+         <h3>¡Encuentra tu lugar perfecto!</h3>
+         <div class="box">
+            <p>Ingresa la ubicación <span>*</span></p>
+            <input type="text" name="location" required maxlength="50" placeholder="Ingresa el nombre de la ciudad" class="input">
+         </div>
+         <div class="flex">
+            <div class="box">
+               <p>Tipo de propiedad <span>*</span></p>
+               <select name="type" class="input" required>
+                  <option value="flat">departamento</option>
+                  <option value="house">casa</option>
+               </select>
+            </div>
+            <div class="box">
+               <p>Cantidad de habitaciones<span>*</span></p>
+               <select name="bhk" class="input" required>
+                  <option value="1">1 </option>
+                  <option value="2">2 </option>
+                  <option value="3">3 </option>
+                  <option value="4">4 </option>
+                  <option value="5">5 </option>
+                  <option value="6">6 </option>
+                  <option value="7">7 </option>
+                  <option value="8">8 </option>
+                  <option value="9">9 </option>
+               </select>
+            </div>
+            <div class="box">
+               <p>Presupuesto minimo <span>*</span></p>
+               <select name="minimum" class="input" required>
+                  <option value="100000">ARS 100.000</option>
+                  <option value="200000">ARS 200.000</option>
+                  <option value="300000">ARS 300.000</option>
+                  <option value="400000">ARS 400.000</option>
+                  <option value="500000">ARS 500.000</option>
+                  <option value="600000">ARS 600.000</option>
+                  <option value="700000">ARS 700.000</option>
+                  <option value="800000">ARS 800.000</option>
+                  <option value="900000">ARS 900.0000</option>
+                  <option value="1000000">ARS 1000.000</option>
+                  <option value="10000000">ARS 1.000.000 </option>
+                  <option value="20000000">ARS 2.000.000 </option>
+               </select>
+            </div>
+            <div class="box">
+               <p>Presupuesto máximo <span>*</span></p>
+               <select name="maximum" class="input" required>
+                  <option value="100000">ARS 100.000</option>
+                  <option value="200000">ARS 200.000</option>
+                  <option value="300000">ARS 300.000</option>
+                  <option value="400000">ARS 400.000</option>
+                  <option value="500000">ARS 500.000</option>
+                  <option value="600000">ARS 600.000</option>
+                  <option value="700000">ARS 700.000</option>
+                  <option value="800000">ARS 800.000</option>
+                  <option value="900000">ARS 900.0000</option>
+                  <option value="1000000">ARS 1000.000</option>
+                  <option value="10000000">ARS 1.000.000 </option>
+                  <option value="20000000">ARS 2.000.000 </option>
+               </select>
+            </div>
+         </div>
+         <input type="submit" value="Buscar propiedad" name="search" class="btn">
+      </form>
+
+   </section>
+
+</div>
+
+<!-- Termina la sección de "Inicio" -->
+
+<!-- Comienza la sección de "Servicios" -->
+
+<section class="services">
+
+   <h1 class="heading">Nuestros servicios</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <img src="{{ MEDIA_URL }} media/images/icon-2.png" alt="">
+         <h3>Alquilar departamentos y casas</h3>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
+      </div>
+
+      <div class="box">
+         <img src="{{ MEDIA_URL }} media/images/icon-3.png " alt="">
+         <h3>Comunicación con el dueño</h3>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
+      </div>
+
+      <div class="box">
+         <img src="{{ MEDIA_URL }} media/images/icon-4.png " alt="">
+         <h3>Interaccion con Inmobiliarias</h3>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
+      </div>
+   </div>
+   
+   <div class="box-container">
+      <div class="box">
+         <img src="{{ MEDIA_URL }} media/images/icon-5.png" alt="">
+         <h3>Tiendas y centros comerciales</h3>
+         <p>Ubicaciones cerca de tus destinos comerciales</p>
+      </div>
+
+      <div class="box">
+         <img src="{{ MEDIA_URL }} media/images/icon-6.png" alt="">
+         <h3>Servicio al cliente</h3>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
+      </div>
+   </div>
+
+</section>
+
+<!-- Termina la sección de "Servicios" -->
+
+<!-- Comienza la sección de "Listados" -->
+
+<section class="listings">
+
+   <h1 class="heading">Ultimos departamentos sumados a la lista</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <div class="admin">
+            <h3>j</h3>
+            <div>
+               <p>john deo</p>
+               <span>10-11-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <p class="total-images"><i class="far fa-image"></i><span>4</span></p>
+            <p class="type"><span>casa</span><span>venta</span></p>
+            <form action="" method="post" class="save">
+               <button type="submit" name="save" class="far fa-heart"></button>
+            </form>
+            <img src="{{ MEDIA_URL }} media/images/house-img-1.webp" alt="">
+         </div>
+         <h3 class="name">Modernos apartamentos y pisos</h3>
+         <p class="location"><i class="fas fa-map-marker-alt"></i><span> Jose Ing., Quiroga - 401303</span></p>
+         <div class="flex">
+            <p><i class="fas fa-bed"></i><span>3</span></p>
+            <p><i class="fas fa-bath"></i><span>2</span></p>
+            <p><i class="fas fa-maximize"></i><span>750</span></p>
+         </div>
+         <a href="{% url 'view_property' %}" class="btn">Ver propiedad</a>
+      </div>
+
+      <!-- Otros listados -->
+
+   </div>
+
+   <div style="margin-top: 2rem; text-align:center;">
+      <a href="{% url 'listings' %}" class="inline-btn">Ver todo</a>
+   </div>
+
+</section>
+
+<!-- Termina la sección de "Listados" -->
+
+<!-- Comienza la sección de "Pie de página" -->
+
+<footer class="footer">
+
+   <section class="flex">
+
+      <div class="box">
+         <a href="tel:1234567890"><i class="fas fa-phone"></i><span>(+54) 3755 123456789</span></a>
+         <a href="tel:1112223333"><i class="fas fa-phone"></i><span>(+54) 3755 987654321</span></a>
+         <a href="mailto:mydeptos@gmail.com"><i class="fas fa-envelope"></i><span>mydeptos@gmail.com</span></a>
+      </div>
+
+      <div class="box">
+         <a href="{% url 'home' %}"><span>Inicio</span></a>
+         <a href="{% url 'about' %}"><span>Sobre nosotros</span></a>
+         <a href="{% url 'contact' %}"><span>Contáctanos</span></a>
+         <a href="{% url 'listings' %}"><span>Todas las Propiedades</span></a>
+      </div>
+
+      <div class="box">
+         <a href="#"><span>Facebook</span><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><span>Instagram</span><i class="fab fa-instagram"></i></a>
+      </div>
+
+   </section>
+
+   <div class="credit">&copy; Derechos de autor @ 2024 |<span> ¡Todos los derechos reservados!</span></div>
+
+</footer>
+<!-- Termina la sección de "Pie de página" -->
+
+<!-- Enlace al archivo JS personalizado -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

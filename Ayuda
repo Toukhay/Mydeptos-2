@@ -1,0 +1,25 @@
+ Installed_apps sirve para agregar las aplicaciones que se van a utilizar en el proyecto
+ MIDDLEWARE es para agregar las funciones que se van a utilizar en el proyecto
+ ROOT_URLCONF es para agregar las urls que se van a utilizar en el proyecto
+ TEMPLATES es para agregar las plantillas que se van a utilizar en el proyecto
+ WSGI_APPLICATION es para agregar la aplicación que se va a utilizar en el proyecto
+ DATABASES es para agregar la base de datos que se va a utilizar en el proyecto
+ AUTH_PASSWORD_VALIDATORS es para agregar las validaciones que se van a utilizar en el proyecto
+ LANGUAGE_CODE es para agregar el idioma que se va a utilizar en el proyecto
+ TIME_ZONE es para agregar la zona horaria que se va a utilizar en el proyecto
+ USE_I18N es para agregar la internacionalización que se va a utilizar en el proyecto
+ USE_TZ es para agregar la zona horaria que se va a utilizar en el proyecto
+ STATIC_URL es para agregar la url que se va a utilizar en el proyecto
+ DEFAULT_AUTO_FIELD es para agregar el campo de clave primaria que se va a utilizar en el proyecto
+ STATICFILES_DIRS es para agregar los archivos estáticos que se van a utilizar en el proyecto
+ MEDIA_URL es para agregar la url de los archivos multimedia que se van a utilizar en el proyecto
+ MEDIA_ROOT es para agregar la ruta de los archivos multimedia que se van a utilizar en el proyecto
+ LOGIN_REDIRECT_URL es para agregar la url de redirección que se va a utilizar en el proyecto
+ LOGOUT_REDIRECT_URL es para agregar la url de redirección que se va a utilizar en el proyecto
+ EMAIL_BACKEND es para agregar el backend de correo que se va a utilizar en el proyecto
+ EMAIL_HOST es para agregar el host de correo que se va a utilizar en el proyecto
+ EMAIL_PORT es para agregar el puerto de correo que se va a utilizar en el proyecto
+ EMAIL_USE_TLS es para agregar el uso de TLS que se va a utilizar en el proyecto
+
+
+con ctrl+. se puede importar los modelos con sus atributos teniendo from django.models.model import charfield

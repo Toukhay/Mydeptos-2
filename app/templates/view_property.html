@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ver Propiedad</title>
+
+   <!-- Enlace al CDN de Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- Enlace al archivo de estilo personalizado -->
+   <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+   
+<!-- Sección de encabezado comienza  -->
+
+<header class="header">
+
+   <nav class="navbar nav-1">
+      <section class="flex">
+         <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
+
+         <ul>
+            <li><a href="#">Publicar Propiedad<i class="fas fa-paper-plane"></i></a></li>
+         </ul>
+      </section>
+   </nav>
+
+   <nav class="navbar nav-2">
+      <section class="flex">
+         <div id="menu-btn" class="fas fa-bars"></div>
+
+         <div class="menu">
+            <ul>
+               <li><a href="#">Novedades</a>
+               </li>
+               <li><a href="#">Publicar Departamento</a> </li>
+               <li><a href="#">Alquilar <i class="fas fa-angle-down"></i></a>
+                  <ul>
+                     <!-- <li><a href="#">Casa</a></li>-->
+                     <li><a href="#">Departamento</a></li>
+                  </ul>
+               </li>
+               
+               <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
+                  <ul>
+                     <li><a href="{% url 'about' %}">Sobre nosotros</a></li>
+                     <li><a href="{% url 'contact' %}">Contáctanos</a></li>
+                     <li><a href="contact.html#faq">Preguntas Frecuentes</a></i></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+
+         <ul>
+            <li><a href="#">Guardado <i class="far fa-heart"></i></a></li>
+            <li><a href="#">Cuenta <i class="fas fa-angle-down"></i></a>
+               <ul>
+                  <li><a href="{% url 'login' %}">Inicia sesión</a></li>
+                  <li><a href="{% url 'register' %}">Regístrate</a></li>
+               </ul>
+            </li>
+         </ul>
+      </section>
+   </nav>
+
+</header>
+
+<!-- Sección de encabezado termina -->
+
+<!-- Sección de vista de propiedad comienza -->
+
+<section class="view-property">
+
+   <div class="details">
+      <div class="thumb">
+         <div class="big-image">
+            <img src="images/house-img-1.webp" alt="">
+         </div>
+         <div class="small-images">
+            <img src="images/house-img-1.webp" alt="">
+            <img src="images/hall-img-1.webp" alt="">
+            <img src="images/kitchen-img-1.webp" alt="">
+            <img src="images/bathroom-img-1.webp" alt="">
+         </div>
+      </div>
+      <h3 class="name">Modernos departamentos y apartamentos</h3>
+      <p class="location"><i class="fas fa-map-marker-alt"></i><span>Andheri, Mumbai, India - 400104</span></p>
+      <div class="info">
+         <p><i class="fas fa-tag"></i><span>15 lac</span></p>
+         <p><i class="fas fa-user"></i><span>John Deo (dueño)</span></p>
+         <p><i class="fas fa-phone"></i><a href="tel:1234567890">1234567890</a></p>
+         <p><i class="fas fa-building"></i><span>Departamento</span></p>
+         <p><i class="fas fa-house"></i><span>Venta</span></p>
+         <p><i class="fas fa-calendar"></i><span>10-11-2022</span></p>
+      </div>
+      <h3 class="title">Detalles</h3>
+      <div class="flex">
+         <div class="box">
+            <p><i>Habitaciones :</i><span>2 BHK</span></p>
+            <p><i>Monto del depósito :</i><span>0</span></p>
+            <p><i>Estado :</i><span>Listo para mudarse</span></p>
+            <p><i>Dormitorio :</i><span>3</span></p>
+            <p><i>Baño :</i><span>2</span></p>
+            <p><i>Balcón :</i><span>1</span></p>
+         </div>
+         <div class="box">
+            <p><i>Área de alfombra :</i><span>750sqft</span></p>
+            <p><i>Antigüedad :</i><span>3 años</span></p>
+            <p><i>Piso de la habitación :</i><span>3</span></p>
+            <p><i>Total de pisos :</i><span>22</span></p>
+            <p><i>Amueblado :</i><span>Semi-amueblado</span></p>
+            <p><i>Préstamo :</i><span>Disponible</span></p>
+         </div>
+      </div>
+      <h3 class="title">Servicios</h3>
+      <div class="flex">
+         <div class="box">
+            <p><i class="fas fa-check"></i><span>Ascensores</span></p>
+            <p><i class="fas fa-check"></i><span>Guardias de seguridad</span></p>
+            <p><i class="fas fa-times"></i><span>Área de juegos</span></p>
+            <p><i class="fas fa-check"></i><span>Jardines</span></p>
+            <p><i class="fas fa-check"></i><span>Suministro de agua</span></p>
+            <p><i class="fas fa-check"></i><span>Respaldo de energía</span></p>
+         </div>
+         <div class="box">
+            <p><i class="fas fa-check"></i><span>Área de estacionamiento</span></p>
+            <p><i class="fas fa-times"></i><span>Gimnasio</span></p>
+            <p><i class="fas fa-check"></i><span>Centro comercial</span></p>
+            <p><i class="fas fa-check"></i><span>Hospital</span></p>
+            <p><i class="fas fa-check"></i><span>Escuelas</span></p>
+            <p><i class="fas fa-check"></i><span>Área de mercado</span></p>
+         </div>
+      </div>
+      <h3 class="title">Descripción</h3>
+      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cupiditate aliquid ipsum recusandae maxime nisi, velit eaque, libero, exercitationem culpa accusamus. Neque dolor quaerat modi saepe facere dignissimos temporibus molestias.</p>
+      <form action="" method="post">
+         <input type="submit" value="Guardar Propiedad" name="save" class="inline-btn">
+      </form>
+   </div>
+
+</section>
+
+<!-- Sección de vista de propiedad termina -->
+
+<!-- Sección de pie de página comienza -->
+
+<footer class="footer">
+
+   <section class="flex">
+
+      <div class="box">
+         <a href="tel:1234567890"><i class="fas fa-phone"></i><span>123456789</span></a>
+         <a href="tel:1112223333"><i class="fas fa-phone"></i><span>987654321</span></a>
+         <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>mydeptoMF@gmail.com</span></a>
+      </div>
+
+      <div class="box">
+         <a href="{% url 'home' %}"><span>Inicio</span></a>
+         <a href="{% url 'about' %}"><span>Sobre nosotros</span></a>
+         <a href="{% url 'contact' %}"><span>Contáctanos</span></a>
+         <a href="{% url 'listings' %}"><span>Todas las Propiedades</span></a>
+         <a href="#"><span>Propiedades Guardadas</span></a>
+      </div>
+
+      <div class="box">
+         <a href="#"><span>Facebook</span><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><span>Instagram</span><i class="fab fa-instagram"></i></a>
+
+      </div>
+
+   </section>
+
+   <div class="credit">&copy; Derechos de autor @ 2024 |<span> ¡Todos los derechos reservados!</span></div>
+
+</footer>
+
+<!-- Sección de pie de página termina -->
+
+
+<!-- Enlace al archivo JS personalizado -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
