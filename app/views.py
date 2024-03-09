@@ -1,39 +1,52 @@
 from django.shortcuts import render
-from .models import Localidad, Agente, Departamento, Foto, Usuario, Listing #importamos los modelos que creamos en models.py para poder usarlos en las vistas y poder mostrar la informacion en el html
+from .models import Listing
 
 def home(request):
-    listings = Listing.objects.all()
-    context = {
-        'listings': listings,
-    }
-    return render(request, 'home.html', context)#esto hace que se renderice el archivo home.html que esta en la carpeta templates de la app
+    if request.method == 'POST':
+        location = request.POST.get('location')
+        property_type = request.POST.get('property_type')
+        bedrooms = request.POST.get('bedrooms')
+        min_price = request.POST.get('min_price')
+        max_price = request.POST.get('max_price')
+
+        listings = Listing.objects.filter(
+            city__icontains=location,
+            property_type__iexact=property_type,
+            num_bedrooms__gte=bedrooms,
+            price__gte=min_price,
+            price__lte=max_price,
+        )
+
+        context = {'listings': listings}
+        return render(request, 'home.html', context)
+
+    return render(request, 'home.html')
+
+def home(request):
+    return render(request, 'home.html')
 
 def about(request):
-    return render(request, 'about.html') #esto hace que se renderice el archivo about.html que esta en la carpeta templates de la app
+    return render(request, 'app/templates/about.html')
 
 def contact(request):
-    return render(request, 'contact.html')
+    return render(request, 'app/templates/contact.html')
 
 def listings(request):
-    return render(request, 'listings.html')
+    listings = Listing.objects.all()
+    context = {'listings': listings}
+    return render(request, 'listings/templates/listings.html', context)
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'accounts/templates/login.html')
 
 def register(request):
-    return render(request, 'register.html')
+    return render(request, 'accounts/templates/register.html')
 
 def search(request):
-    return render(request, 'search.html')
+    return render(request, 'listings/templates/search.html')
 
 def view_property(request):
-    return render(request, 'view_property.html')
+    return render(request, 'property/templates/view_property.html')
 
-def PanelUsuario(request):
-    return render(request, 'user_panel.html')
-
-
-
-
-
-
+def user_panel(request):
+    return render(request, 'accounts/templates/user_panel.html')
