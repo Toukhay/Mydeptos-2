@@ -180,7 +180,7 @@ section{
 }
 
 .home {
-   background: url('home-bg.jpg') no-repeat;
+   background: url('static/media/home-bg.jpg') no-repeat;
    background-size: cover;
    background-position: center;
 }

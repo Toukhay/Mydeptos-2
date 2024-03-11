@@ -26,10 +26,10 @@ def home(request):
     return render(request, 'home.html')
 
 def about(request):
-    return render(request, 'app/templates/about.html')
+    return render(request, 'about.html')
 
 def contact(request):
-    return render(request, 'app/templates/contact.html')
+    return render(request, 'contact.html')
 
 def listings(request):
     listings = Listing.objects.all()

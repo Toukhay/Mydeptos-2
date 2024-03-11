@@ -1,16 +1,16 @@
 {% load static %}
 
-{% for listing in listings %}
-    <div>
-        <h2>{{ listing.name }}</h2>
-        <p>City: {{ listing.city }}</p>
-        <p>Type: {{ listing.get_property_type_display }}</p>
-        <p>Bedrooms: {{ listing.num_bedrooms }}</p>
-        <p>Price: {{ listing.price_min }} - {{ listing.price_max }}</p>
-    </div>
+{% comment %} {% for listing in listings %}
+   <div>
+      <h2>{{ listing.name }}</h2>
+      <p>City: {{ listing.city }}</p>
+      <p>Type: {{ listing.get_property_type_display }}</p>
+      <p>Bedrooms: {{ listing.num_bedrooms }}</p>
+      <p>Price: {{ listing.price_min }} - {{ listing.price_max }}</p>
+   </div>
 {% empty %}
-    <p>No listings found.</p>
-{% endfor %} 
+   <p>No listings found.</p> {% endcomment %}
+{% comment %} {% endfor %}  {% endcomment %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -36,9 +36,13 @@
    <nav class="navbar nav-1">
       <section class="flex">
          <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
+
+         <ul>
+            <li><a href="#">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
+         </ul>
       </section>
    </nav>
-
+   
    <nav class="navbar nav-2">
       <section class="flex">
          <div id="menu-btn" class="fas fa-bars"></div>
@@ -46,7 +50,6 @@
          <div class="menu">
             <ul>
                <li><a href="#">Novedades</a></li>
-               <li><a href="#">Publicar Departamento</a></li>
                <li><a href="#">Alquilar<i class="fas fa-angle-down"></i></a>
                   <ul>
                      <li><a href="#">Departamento</a></li>
