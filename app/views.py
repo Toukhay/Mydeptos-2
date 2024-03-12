@@ -34,19 +34,20 @@ def contact(request):
 def listings(request):
     listings = Listing.objects.all()
     context = {'listings': listings}
-    return render(request, 'listings/templates/listings.html', context)
+    return render(request, 'listings.html', context)
 
-def login(request):
-    return render(request, 'accounts/templates/login.html')
-
-def register(request):
-    return render(request, 'accounts/templates/register.html')
 
 def search(request):
-    return render(request, 'listings/templates/search.html')
+    return render(request, 'search.html')
 
 def view_property(request):
-    return render(request, 'property/templates/view_property.html')
+    return render(request, 'view_property.html')
+
+def login(request):
+    return render(request, 'login.html')
+
+def register(request):
+    return render(request, 'register.html')
 
 def user_panel(request):
-    return render(request, 'accounts/templates/user_panel.html')
+    return render(request, 'user_panel.html')
