@@ -1,0 +1,132 @@
+{% load static %}   
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>publicar propiedad</title>
+
+      <!-- font awesome cdn link  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+      <!-- custom css file link  -->
+      <link rel="stylesheet" href="{% static 'style.css' %}">
+
+   </head>
+   <body>
+      <header class="header">
+
+         <nav class="navbar nav-1">
+            <section class="flex">
+               <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
+      
+               <ul>
+                  <li><a href="{% url 'post_property'%}">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
+               </ul>
+            </section>
+         </nav>
+      
+         <nav class="navbar nav-2">
+            <section class="flex">
+               <div id="menu-btn" class="fas fa-bars"></div>
+      
+               <div class="menu">
+                  <ul>
+                     <li><a href="#">Publicar<i class="fas fa-angle-down"></i></a>
+                        <ul>
+                           <li><a href="#">Publicar propiedad</a></li>
+                           <li><a href="{% url 'user_panel'%}">Panel de control</a></li>
+                        </ul>
+                     </li>
+                     <li><a href="search.html">Buscar</a>
+                     </li>
+                     <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
+                        <ul>
+                           <li><a href="{% url 'about' %}">Sobre nosotros</a></li>
+                           <li><a href="{% url 'contact' %}">Contáctanos</a></li>
+                           <li><a href="contact.html#faq">FAQ</a></i></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+      
+               <ul>
+                  {% comment %} <li><a href="#">Favoritos <i class="far fa-heart"></i></a></li> {% endcomment %}
+                  {% comment %} <li><a href="#">Cuenta <i class="fas fa-angle-down"></i></a> {% endcomment %}
+                     <ul>
+                        <li><a href="{% url 'login'%}">Iniciar sesion</a></li>
+                        <li><a href="{% url 'register'%}">Registrarse</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </section>
+         </nav>
+      
+      </header>
+   
+   </header>
+      <div class="post-property-container">
+         <form action="#" method="post" enctype="multipart/form-data" class="post-property-form">
+               <h2 class="post-property-h2">Publicar Propiedad</h2>
+
+               <label for="propertyImages" class="post-property-label">Subir Fotos (máx. 5)</label>
+               <input type="file" name="propertyImages[]" id="propertyImages" multiple accept="image/*" class="post-property-input" />
+
+               <label for="listingType" class="post-property-label">Tipo de Anunciante</label>
+               <select name="listingType" id="listingType" class="post-property-select">
+                  <option value="inmobiliaria">Inmobiliaria</option>
+                  <option value="dueno_directo">Dueño Directo</option>
+               </select>
+
+               <label for="contactInfo" class="post-property-label">Información de Contacto</label>
+               <textarea name="contactInfo" id="contactInfo" rows="4" placeholder="Ingrese información de contacto..." class="post-property-textarea"></textarea>
+
+               <label for="propertyDescription" class="post-property-label">Descripción de la Propiedad</label>
+               <textarea name="propertyDescription" id="propertyDescription" rows="4" placeholder="Ingrese la descripción de la propiedad..." class="post-property-textarea"></textarea>
+
+               <label for="propertyType" class="post-property-label">Tipo de Propiedad</label>
+               <input type="text" name="propertyType" id="propertyType" placeholder="Ej. Departamento, Casa, Local, etc." class="post-property-input" />
+
+               <label for="bedrooms" class="post-property-label">Número de Habitaciones</label>
+               <input type="number" name="bedrooms" id="bedrooms" min="0" class="post-property-input" />
+
+               <label for="price" class="post-property-label">Precio (en ARS)</label>
+               <input type="number" name="price" id="price" min="0" class="post-property-input" />
+
+               <!-- Agrega más campos según sea necesario -->
+
+               <input type="submit" value="Publicar Propiedad" class="post-property-submit-btn" />
+         </form>
+      </div>
+
+      <footer class="footer">
+
+         <section class="flex">
+      
+            <div class="box">
+               <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>mydepto@gmail.com</span></a>
+            </div>
+      
+            <div class="box">
+               <a href="home.html"><span>Inicio</span></a>
+               <a href="about.html"><span>Sobre nosotros</span></a>
+               <a href="contact.html"><span>Contacto</span></a>
+               <a href="listings.html"><span>Propiedades</span></a>
+            </div>
+      
+            <div class="box">
+               <a href="#"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+               <a href="#"><span>instagram</span><i class="fab fa-instagram"></i></a>
+      
+            </div>
+      
+         </section>
+      
+         <div class="credit">&copy; copyright @ 2025 by <span>mydepto</span> | todos los derechos reservados</div>
+      
+      </footer>
+
+      <script src="{% static 'js/script.js' %}"></script>
+   </body>
+   </html>

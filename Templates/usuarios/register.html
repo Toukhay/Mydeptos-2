@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +12,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
    <!-- Enlace al archivo CSS personalizado -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="{% static 'style.css' %}">
 
 </head>
 <body>
@@ -21,7 +23,7 @@
 
    <nav class="navbar nav-1">
       <section class="flex">
-         <a href="home.html" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
+         <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
 
          <ul>
             <li><a href="#">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
@@ -35,44 +37,30 @@
 
          <div class="menu">
             <ul>
-               <li><a href="#">Comprar<i class="fas fa-angle-down"></i></a>
+               <li><a href="#">Publicar<i class="fas fa-angle-down"></i></a>
                   <ul>
-                     <li><a href="#">casa</a></li>
-                     <li><a href="#">apartamento</a></li>
-                     <li><a href="#">tienda</a></li>
-                     <li><a href="#">listo para mudarse</a></li>
-                     <li><a href="#">amueblado</a></li>
+                     <li><a href="#">Publicar propiedad</a></li>
+                     <li><a href="{% url 'user_panel'%}">Panel de control</a></li>
                   </ul>
                </li>
-               <li><a href="#">Vender<i class="fas fa-angle-down"></i></a>
-                  <ul>
-                     <li><a href="#">publicar propiedad</a></li>
-                     <li><a href="#">panel de control</a></li>
-                  </ul>
-               </li>
-               <li><a href="#">Alquilar</a>
-                  <ul>
-                     <li><a href="#">casa</a></li>
-                     <li><a href="#">apartamento</a></li>
-                     <li><a href="#">tienda</a></li>
-                  </ul>
+               <li><a href="search.html">Buscar</a>
                </li>
                <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
                   <ul>
-                     <li><a href="about.html">sobre nosotros</a></i></li>
-                     <li><a href="contact.html">contáctanos</a></i></li>
-                     <li><a href="contact.html#faq">Preguntas frecuentes</a></i></li>
+                     <li><a href="{% url 'about' %}">Sobre nosotros</a></li>
+                     <li><a href="{% url 'contact' %}">Contáctanos</a></li>
+                     <li><a href="contact.html#faq">FAQ</a></i></li>
                   </ul>
                </li>
             </ul>
          </div>
 
          <ul>
-            <li><a href="#">Guardado <i class="far fa-heart"></i></a></li>
-            <li><a href="#">Cuenta <i class="fas fa-angle-down"></i></a>
+            {% comment %} <li><a href="#">Favoritos <i class="far fa-heart"></i></a></li> {% endcomment %}
+            {% comment %} <li><a href="#">Cuenta <i class="fas fa-angle-down"></i></a> {% endcomment %}
                <ul>
-                  <li><a href="login.html">iniciar sesión</a></li>
-                  <li><a href="register.html">registrarse</a></li>
+                  <li><a href="{% url 'login'%}">Iniciar sesion</a></li>
+                  <li><a href="{% url 'register'%}">Registrarse</a></li>
                </ul>
             </li>
          </ul>
@@ -80,6 +68,7 @@
    </nav>
 
 </header>
+
 
 <!-- Termina la sección del encabezado -->
 
@@ -108,35 +97,32 @@
    <section class="flex">
 
       <div class="box">
-         <a href="tel:1234567890"><i class="fas fa-phone"></i><span>123456789</span></a>
-         <a href="tel:1112223333"><i class="fas fa-phone"></i><span>987654321</span></a>
-         <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>mydeptoMF@gmail.com</span></a>
+         <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>mydepto@gmail.com</span></a>
       </div>
 
       <div class="box">
-         <a href="home.html"><span>Inicio</span></a>
-         <a href="about.html"><span>Sobre</span></a>
-         <a href="contact.html"><span>Contacto</span></a>
-         <a href="listings.html"><span>Todas las Propiedades</span></a>
-         <a href="#"><span>Propiedades Guardadas</span></a>
+         <a href="{% url 'home' %}"><span>Inicio</span></a>
+         <a href="{% url 'about' %}"><span>Sobre nosotros</span></a>
+         <a href="{% url 'contact' %}"><span>Contactos</span></a>
+         <a href="{% url 'listings' %}"><span>Propiedades</span></a>
       </div>
 
       <div class="box">
-         <a href="#"><span>Facebook</span><i class="fab fa-facebook-f"></i></a>
-         <a href="#"><span>Instagram</span><i class="fab fa-instagram"></i></a>
+         <a href="#"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><span>instagram</span><i class="fab fa-instagram"></i></a>
 
       </div>
 
    </section>
 
-   <div class="credit">&copy; Derechos de autor @ 2024 |<span> ¡Todos los derechos reservados!</span></div>
+   <div class="credit">&copy; copyright @ 2025 by <span>mydepto</span> | todos los derechos reservados</div>
 
 </footer>
 
 <!-- Termina la sección del pie de página -->
 
 <!-- Enlace al archivo JS personalizado -->
-<script src="js/script.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>
