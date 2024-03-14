@@ -37,10 +37,10 @@ def listings(request):
     return render(request, 'listings/templates/listings.html', context)
 
 def login(request):
-    return render(request, 'accounts/templates/login.html')
+    return render(request, 'usuarios/login.html')
 
 def register(request):
-    return render(request, 'accounts/templates/register.html')
+    return render(request, 'usuarios/register.html')
 
 def search(request):
     return render(request, 'listings/templates/search.html')

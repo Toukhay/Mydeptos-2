@@ -62,7 +62,6 @@ class Listing(models.Model):
     price_min = models.DecimalField(max_digits=10, decimal_places=2)
     price_max = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField(default=timezone.now) 
-    image = models.ImageField(upload_to='listings/static/')
 
     def __str__(self):
         return self.name
