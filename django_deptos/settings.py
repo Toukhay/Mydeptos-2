@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',
+    'home',
     'accounts',
+    'property',
+    'listings',
 
 ]
 
@@ -121,12 +123,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = BASE_DIR / 'app/media'
+MEDIA_ROOT = BASE_DIR / 'home/media'
 
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'app/static',
+    BASE_DIR / 'home/static',
 ]
 
 

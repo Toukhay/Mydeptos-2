@@ -19,7 +19,8 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 
-from app import views
+
+from home import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +33,8 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('view_property/', views.view_property, name='view_property'),
     path ('user_panel/', views.user_panel, name='user_panel'),
+    path('post_property/', views.post_property,name='post_property'),
+    path('view_property/', views.view_property, name='view_property'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

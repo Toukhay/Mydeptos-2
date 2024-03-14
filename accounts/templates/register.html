@@ -26,36 +26,43 @@
          <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
 
          <ul>
-            <li><a href="{% url 'post_property' %}">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
+            <li><a href="#">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
          </ul>
       </section>
    </nav>
-   
+
    <nav class="navbar nav-2">
       <section class="flex">
          <div id="menu-btn" class="fas fa-bars"></div>
 
          <div class="menu">
             <ul>
-               <li><a href="#">Novedades</a></li>
-               <li><a href="#">Alquilar<i class="fas fa-angle-down"></i></a>
+               <li><a href="#">Publicar<i class="fas fa-angle-down"></i></a>
                   <ul>
-                     <li><a href="#">Departamento</a></li>
-                     <li><a href="#">Casa</a></li>
+                     <li><a href="#">Publicar propiedad</a></li>
+                     <li><a href="{% url 'user_panel'%}">Panel de control</a></li>
                   </ul>
+               </li>
+               <li><a href="search.html">Buscar</a>
                </li>
                <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
                   <ul>
                      <li><a href="{% url 'about' %}">Sobre nosotros</a></li>
                      <li><a href="{% url 'contact' %}">Contáctanos</a></li>
+                     <li><a href="contact.html#faq">FAQ</a></i></li>
                   </ul>
                </li>
             </ul>
          </div>
 
-         <ul>            
-            <li><a href="{% url 'login' %}">Inicia sesión</a></li>
-            <li><a href="{% url 'register' %}">Regístrate</a></li>
+         <ul>
+            {% comment %} <li><a href="#">Favoritos <i class="far fa-heart"></i></a></li> {% endcomment %}
+            {% comment %} <li><a href="#">Cuenta <i class="fas fa-angle-down"></i></a> {% endcomment %}
+               <ul>
+                  <li><a href="{% url 'login'%}">Iniciar sesion</a></li>
+                  <li><a href="{% url 'register'%}">Registrarse</a></li>
+               </ul>
+            </li>
          </ul>
       </section>
    </nav>
