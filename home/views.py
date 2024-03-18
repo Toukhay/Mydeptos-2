@@ -22,7 +22,7 @@ def home(request):
 
     return render(request, 'home.html')
 
-def home(request):
+def homee(request):
     return render(request, 'home.html')
 
 def about(request):
@@ -43,8 +43,8 @@ def search(request):
 def view_property(request):
     return render(request, 'view_property.html')
 
-def login(request):
-    return render(request, 'usuarios/login.html')
+# def login(request):
+#     return render(request, 'usuarios/login.html')
 
 def register(request):
     return render(request, 'usuarios/register.html')

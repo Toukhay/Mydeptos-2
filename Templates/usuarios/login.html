@@ -73,13 +73,21 @@
 <!-- Comienza la sección de inicio de sesión -->
 
 <section class="form-container">
-
-   <form action="" method="post">
+   {% if messages %}
+      {% for message in messages%}
+      <div class="alert {% if message.tags == 'success'%}alert-success {% else %}alert-danger{% endif %}">
+            <button type="button" class="close" data-dismiss="alert"></button>
+            {{message}}
+      </div>
+      {% endfor %}
+   {% endif %}
+   <form method="post">
+      {% csrf_token %}
       <h3>¡Bienvenido de nuevo!</h3>
       <input type="email" name="email" required maxlength="50" placeholder="Ingresa tu correo electrónico" class="box">
-      <input type="password" name="pass" required maxlength="20" placeholder="Ingresa tu contraseña" class="box">
+      <input type="password" name="password" required maxlength="20" placeholder="Ingresa tu contraseña" class="box">
       <p>¿No tienes una cuenta? <a href="{% url 'register' %}">Regístrate</a></p>
-      <input type="submit" value="Iniciar sesión ahora" name="submit" class="btn">
+      <button type="submit" value="Iniciar sesión ahora" name="submit" class="btn">Iniciar sesión</button>
    </form>
 
 </section>

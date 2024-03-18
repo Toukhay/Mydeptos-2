@@ -15,26 +15,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from django.conf.urls.static import static
+from . import views
 from django.conf import settings
 
 
-from home import views
+from home import views as hviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
-    path('contact/', views.contact, name='contact'),
-    path('listings/', views.listings, name='listings'),
-    path('login/', views.login, name='login'),
-    path('register/', views.register, name='register'),
-    path('search/', views.search, name='search'),
-    path('view_property/', views.view_property, name='view_property'),
-    path ('user_panel/', views.user_panel, name='user_panel'),
-    path('post_property/', views.post_property,name='post_property'),
-    path('view_property/', views.view_property, name='view_property'),
+    path('', hviews.homee, name='home'),
+    path('about/', hviews.about, name='about'),
+    path('contact/', hviews.contact, name='contact'),
+    path('listings/', hviews.listings, name='listings'),
+    path('usuarios/login', views.login_view, name='login'),
+    path('register/', hviews.register, name='register'),
+    path('search/', hviews.search, name='search'),
+    path('view_property/', hviews.view_property, name='view_property'),
+    path ('user_panel/', hviews.user_panel, name='user_panel'),
+    path('post_property/', hviews.post_property,name='post_property'),
+    path('view_property/', hviews.view_property, name='view_property'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
