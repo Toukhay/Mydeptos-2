@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-19T16:25:17.164Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0" etag="lgONrhwUXZtzXNtCUehs" version="24.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-19T16:30:16.873Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0" etag="vm01TiPfO8FYaV-W18v2" version="24.0.7" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="624" dy="2859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" background="#FFFFFF" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -417,7 +417,7 @@
             <mxRectangle width="264" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SWRiujzuV_JK1SQ2j1od-85" value="name chart(100)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;labelBackgroundColor=none;strokeColor=#E07A5F;fontColor=#393C56;" vertex="1" parent="1">
+        <mxCell id="SWRiujzuV_JK1SQ2j1od-85" value="username chart(100)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;labelBackgroundColor=none;strokeColor=#E07A5F;fontColor=#393C56;" vertex="1" parent="1">
           <mxGeometry x="1250" y="507.5" width="150" height="30" as="geometry">
             <mxRectangle width="264" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -481,7 +481,7 @@
             <mxRectangle width="264" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SWRiujzuV_JK1SQ2j1od-99" value="phone chart(100)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;labelBackgroundColor=none;strokeColor=#E07A5F;fontColor=#393C56;" vertex="1" parent="1">
+        <mxCell id="SWRiujzuV_JK1SQ2j1od-99" value="registration_date chart(100)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;labelBackgroundColor=none;strokeColor=#E07A5F;fontColor=#393C56;" vertex="1" parent="1">
           <mxGeometry x="1250" y="720" width="150" height="30" as="geometry">
             <mxRectangle width="264" height="30" as="alternateBounds" />
           </mxGeometry>
