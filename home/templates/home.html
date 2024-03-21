@@ -49,12 +49,8 @@
 
          <div class="menu">
             <ul>
-               <li><a href="#">Novedades</a></li>
-               <li><a href="#">Alquilar<i class="fas fa-angle-down"></i></a>
-                  <ul>
-                     <li><a href="#">Departamento</a></li>
-                     <li><a href="#">Casa</a></li>
-                  </ul>
+               <li><a href="{% url 'home' %}#latest-listings">Novedades</a></li>
+               <li><a href="{% url 'search' %}">Buscar</a>
                </li>
                <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
                   <ul>
@@ -79,11 +75,11 @@
 <!-- Comienza la sección de "Inicio" -->
 
 <div class="home">
-
-   <section class="center">
+   
+   <section class="center" style="background-image: url('{% static "media/images/home-bg.jpg" %}')">
 
       <form action="{% url 'search' %}" method="post">
-         <h3>¡Encuentra tu lugar perfecto!</h3>
+         <h3>¡Encontra tu depto ideal!</h3>
          <div class="box">
             <p>Ingresa la ubicación <span>*</span></p>
             <input type="text" name="location" required maxlength="50" placeholder="Ingresa el nombre de la ciudad" class="input">
@@ -92,12 +88,12 @@
             <div class="box">
                <p>Tipo de propiedad <span>*</span></p>
                <select name="type" class="input" required>
-                  <option value="flat">departamento</option>
-                  <option value="house">casa</option>
+                  <option value="flat">Departamento</option>
+                  <option value="house">Casa</option>
                </select>
             </div>
             <div class="box">
-               <p>Cantidad de habitaciones<span>*</span></p>
+               <p>¿Cuantas habitaciones?<span>*</span></p>
                <select name="bhk" class="input" required>
                   <option value="1">1 </option>
                   <option value="2">2 </option>
@@ -111,7 +107,7 @@
                </select>
             </div>
             <div class="box">
-               <p>Presupuesto minimo <span>*</span></p>
+               <p>Presupuesto mínimo <span>*</span></p>
                <select name="minimum" class="input" required>
                   <option value="100000">ARS 100.000</option>
                   <option value="200000">ARS 200.000</option>
@@ -163,33 +159,33 @@
    <div class="box-container">
 
       <div class="box">
-         <img src="{{ MEDIA_URL }} media/images/icon-2.png" alt="">
-         <h3>Alquilar departamentos y casas</h3>
+         <img src="{% static 'media/images/icon-4.png' %}" alt="">
+         <h3>Buscar por ubicacion</h3>
          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
       </div>
 
       <div class="box">
-         <img src="{{ MEDIA_URL }} media/images/icon-3.png " alt="">
-         <h3>Comunicación con el dueño</h3>
+         <img src="{% static 'media/images/icon-2.png' %}" alt="">
+         <h3>Publicar propiedad</h3>
          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
       </div>
 
       <div class="box">
-         <img src="{{ MEDIA_URL }} media/images/icon-4.png " alt="">
-         <h3>Interaccion con Inmobiliarias</h3>
+         <img src="{% static 'media/images/icon-1.png' %}" alt="">
+         <h3>Interaccion con Dueño directos y Inmobiliarias</h3>
          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
       </div>
    </div>
    
    <div class="box-container">
       <div class="box">
-         <img src="{{ MEDIA_URL }} media/images/icon-5.png" alt="">
+         <img src="{% static 'media/images/icon-5.png' %}" alt="">
          <h3>Tiendas y centros comerciales</h3>
          <p>Ubicaciones cerca de tus destinos comerciales</p>
       </div>
 
       <div class="box">
-         <img src="{{ MEDIA_URL }} media/images/icon-6.png" alt="">
+         <img src="{% static 'media/images/icon-6.png' %}" alt="">
          <h3>Servicio al cliente</h3>
          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
       </div>
@@ -201,7 +197,7 @@
 
 <!-- Comienza la sección de "Listados" -->
 
-<section class="listings">
+<section id="latest-listings" class="listings">
 
    <h1 class="heading">Ultimos departamentos sumados a la lista</h1>
 
@@ -209,21 +205,21 @@
 
       <div class="box">
          <div class="admin">
-            <h3>j</h3>
+            <h3>JL</h3>
             <div>
-               <p>john deo</p>
-               <span>10-11-2022</span>
+               <p>Juan Lopez (Dueño directo) </p>
+               <span>10-11-2024</span>
             </div>
          </div>
          <div class="thumb">
             <p class="total-images"><i class="far fa-image"></i><span>4</span></p>
-            <p class="type"><span>casa</span><span>venta</span></p>
+            <p class="type"><span>Departamento</span><span>Libre</span></p>
             <form action="" method="post" class="save">
                <button type="submit" name="save" class="far fa-heart"></button>
             </form>
-            <img src="{{ MEDIA_URL }} media/images/house-img-1.webp" alt="">
+            <img src="{% static 'media/images/house-img-2.webp' %}" alt="">
          </div>
-         <h3 class="name">Modernos apartamentos y pisos</h3>
+         <h3 class="name">Departamento moderno</h3>
          <p class="location"><i class="fas fa-map-marker-alt"></i><span> Jose Ing., Quiroga - 401303</span></p>
          <div class="flex">
             <p><i class="fas fa-bed"></i><span>3</span></p>
@@ -233,6 +229,31 @@
          <a href="{% url 'view_property' %}" class="btn">Ver propiedad</a>
       </div>
 
+      <div class="box">
+         <div class="admin">
+            <h3>MG</h3>
+            <div>
+               <p>Maria Gomez (Inmobiliaria) </p>
+               <span>10-11-2024</span>
+            </div>
+         </div>
+         <div class="thumb"> 
+            <p class="total-images"><i class="far fa-image"></i><span>4</span></p>
+            <p class="type"><span>Departamento</span><span>Ocupado</span></p>
+            <form action="" method="post" class="save">
+               <button type="submit" name="save" class="far fa-heart"></button>
+            </form>
+            <img src="{% static 'media/images/house-img-1.webp' %}" alt="">
+         </div>
+         <h3 class="name">Departamento estudiantil</h3>
+         <p class ="location"><i class="fas fa-map-marker-alt"></i><span> Av. San Martin - 401303</span></p>
+         <div class="flex">
+            <p><i class="fas fa-bed"></i><span>2</span></p>
+            <p><i class="fas fa-bath"></i><span>1</span></p>
+            <p><i class="fas fa-maximize"></i><span>500m²</span></p>
+         </div>
+         <a href="{% url 'view_property' %}" class="btn">Ver propiedad</a>
+      </div>
       <!-- Otros listados -->
 
    </div>
@@ -252,8 +273,7 @@
    <section class="flex">
 
       <div class="box">
-         <a href="tel:1234567890"><i class="fas fa-phone"></i><span>(+54) 3755 123456789</span></a>
-         <a href="tel:1112223333"><i class="fas fa-phone"></i><span>(+54) 3755 987654321</span></a>
+
          <a href="mailto:mydeptos@gmail.com"><i class="fas fa-envelope"></i><span>mydeptos@gmail.com</span></a>
       </div>
 
@@ -271,13 +291,13 @@
 
    </section>
 
-   <div class="credit">&copy; Derechos de autor @ 2024 |<span> ¡Todos los derechos reservados!</span></div>
+   <div class="credit">&copy; copyright @ 2025 by <span>Mydeptos</span> | todos los derechos reservados</div>
 
 </footer>
 <!-- Termina la sección de "Pie de página" -->
 
 <!-- Enlace al archivo JS personalizado -->
-<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'script.js' %}"></script>
 
 </body>
 </html>

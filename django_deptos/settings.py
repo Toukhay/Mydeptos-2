@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig',
     'home',
-    'accounts',
     'property',
     'listings',
 
@@ -121,16 +121,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# Directorio base de tu proyecto Django
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Configuración de archivos estáticos
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = BASE_DIR / 'home/media'
-
-MEDIA_URL = '/media/'
-
+# Directorios adicionales de archivos estáticos
 STATICFILES_DIRS = [
-    BASE_DIR / 'home/static',
+    os.path.join(BASE_DIR, 'static'),
 ]
 
+# Configuración de archivos de medios
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
 
 # Default primary key field type

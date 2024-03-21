@@ -1,0 +1,101 @@
+
+1. **users**:
+   - id (int, PK)
+   - username (varchar/str)
+   - email (varchar/str)
+   - ...
+
+2. **login**:
+   - id (int, PK)
+   - user_id (int, FK hacia users)
+   - username (varchar/str)
+   - password (varchar/str)
+   - last_login_date (datetime/fecha y hora)
+   - ...
+
+3. **register**:
+   - id (int, PK)
+   - user_id (int, FK hacia users)
+   - registration_date (datetime/fecha y hora)
+   - ...
+
+4. **user_panel**:
+   - id (int, PK)
+   - user_id (int, FK hacia users)
+   - profile_picture_url (varchar/str)
+   - username (varchar/str)
+   - password (varchar/str)
+   - address (varchar/str)
+   - locality_id (int, FK hacia localidades)
+   - other_details (varchar/str, otros detalles del usuario)
+   - ...
+
+5. **apartments**:
+   - id (int, PK)
+   - title (varchar/str)
+   - description (text)
+   - address (varchar/str)
+   - locality_id (int, FK hacia localidades)
+   - price (decimal, float, u otro tipo numérico)
+   - ...
+
+6. **photos**:
+   - id (int, PK)
+   - apartment_id (int, FK hacia apartments)
+   - url (varchar/str)
+   - ...
+
+7. **contacts**:
+   - id (int, PK)
+   - apartment_id (int, FK hacia apartments)
+   - user_id (int, FK hacia users)
+   - contact_method (varchar/str)
+   - message (text)
+   - date (datetime/fecha y hora)
+   - ...
+
+8. **bookmarks**:
+   - id (int, PK)
+   - apartment_id (int, FK hacia apartments)
+   - user_id (int, FK hacia users)
+   - ...
+
+9. **amenities**:
+   - id (int, PK)
+   - name (varchar/str)
+   - ...
+
+10. **apartment_amenities**:
+    - id (int, PK)
+    - apartment_id (int, FK hacia apartments)
+    - amenity_id (int, FK hacia amenities)
+    - ...
+
+11. **tags**:
+    - id (int, PK)
+    - name (varchar/str)
+    - ...
+
+12. **apartment_tags**:
+    - id (int, PK)
+    - apartment_id (int, FK hacia apartments)
+    - tag_id (int, FK hacia tags)
+    - ...
+
+13. **agents**:
+    - id (int, PK)
+    - name (varchar/str)
+    - email (varchar/str)
+    - phone (varchar/str)
+    - ...
+
+14. **booked_status**:
+    - id (int, PK)
+    - apartment_id (int, FK hacia apartments)
+    - user_id (int, FK hacia users)
+    - is_booked (booleano)
+
+15. **localidades**:
+    - id (int, PK)
+    - name (varchar/str)
+    - ...

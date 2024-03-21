@@ -26,3 +26,13 @@ document.querySelectorAll('.faq .box-container .box h3').forEach(headings =>{
       headings.parentElement.classList.toggle('active');
    }
 });
+
+   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+         e.preventDefault();
+
+         document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+         });
+      });
+   });
