@@ -10,17 +10,17 @@ def login_view(request):
         return redirect('home')
     
     if request.method == 'POST':
-        email = request.POST.get('email')
+        username = request.POST.get('username')
         password = request.POST.get('password')
 
-        user = authenticate(email= email, password = password)
+        user = authenticate(username= username, password = password)
         if user:
             login(request, user)
             messages.success(request,'Ha iniciado sesion')
-            # print('loggeado')
+            print('loggeado')
             return redirect('home')
         else:
-            # print('no logg')
+            print('no logg')
             messages.error(request, 'Acesso denegado')
 
     return render(request,"usuarios/login.html") 
