@@ -1,17 +1,5 @@
 {% load static %}
 
-{% comment %} {% for listing in listings %}
-   <div>
-      <h2>{{ listing.name }}</h2>
-      <p>City: {{ listing.city }}</p>
-      <p>Type: {{ listing.get_property_type_display }}</p>
-      <p>Bedrooms: {{ listing.num_bedrooms }}</p>
-      <p>Price: {{ listing.price_min }} - {{ listing.price_max }}</p>
-   </div>
-{% empty %}
-   <p>No listings found.</p> {% endcomment %}
-{% comment %} {% endfor %}  {% endcomment %}
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,7 +26,7 @@
          <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
 
          <ul>
-            <li><a href="#">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
+            <li><a href="{% url 'post_property' %}">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
          </ul>
       </section>
    </nav>
@@ -224,7 +212,7 @@
          <div class="flex">
             <p><i class="fas fa-bed"></i><span>3</span></p>
             <p><i class="fas fa-bath"></i><span>2</span></p>
-            <p><i class="fas fa-maximize"></i><span>750</span></p>
+            <p><i class="fas fa-maximize"></i><span>750m²</span></p>
          </div>
          <a href="{% url 'view_property' %}" class="btn">Ver propiedad</a>
       </div>

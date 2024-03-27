@@ -57,3 +57,6 @@ def post_property(request):
 
 def view_property(request):
     return render(request, 'view_property.html')
+
+def favorites(request):
+    return render(request, 'favorite.html')

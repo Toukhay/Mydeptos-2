@@ -1,11 +1,12 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Contacto</title>
+   <title>Inicio</title>
 
    <!-- Enlace al archivo de fuente impresionante (font awesome)  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -25,7 +26,7 @@
          <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
 
          <ul>
-            <li><a href="#">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
+            <li><a href="{% url 'post_property' %}">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
          </ul>
       </section>
    </nav>
@@ -36,12 +37,8 @@
 
          <div class="menu">
             <ul>
-               <li><a href="#">Novedades</a></li>
-               <li><a href="#">Alquilar<i class="fas fa-angle-down"></i></a>
-                  <ul>
-                     <li><a href="#">Departamento</a></li>
-                     <li><a href="#">Casa</a></li>
-                  </ul>
+               <li><a href="{% url 'home' %}#latest-listings">Novedades</a></li>
+               <li><a href="{% url 'search' %}">Buscar</a>
                </li>
                <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
                   <ul>
@@ -154,8 +151,7 @@
    <section class="flex">
 
       <div class="box">
-         <a href="tel:1234567890"><i class="fas fa-phone"></i><span>(+54) 3755 123456789</span></a>
-         <a href="tel:1112223333"><i class="fas fa-phone"></i><span>(+54) 3755 987654321</span></a>
+
          <a href="mailto:mydeptos@gmail.com"><i class="fas fa-envelope"></i><span>mydeptos@gmail.com</span></a>
       </div>
 
@@ -173,13 +169,13 @@
 
    </section>
 
-   <div class="credit">&copy; Derechos de autor @ 2024 |<span> ¡Todos los derechos reservados!</span></div>
+   <div class="credit">&copy; copyright @ 2025 by <span>Mydeptos</span> | todos los derechos reservados</div>
 
 </footer>
 <!-- Termina la sección de "Pie de página" -->
 
 <!-- Enlace al archivo JS personalizado -->
-<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'script.js' %}"></script>
 
 </body>
 </html>

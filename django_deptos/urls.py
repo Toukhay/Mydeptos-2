@@ -21,6 +21,9 @@ from django.conf import settings
 
 
 from home import views
+from listings import views
+from property import views
+from accounts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,6 +38,7 @@ urlpatterns = [
     path ('user_panel/', views.user_panel, name='user_panel'),
     path('post_property/', views.post_property,name='post_property'),
     path('view_property/', views.view_property, name='view_property'),
+    path('favorites/', views.favorites, name='favorites'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
