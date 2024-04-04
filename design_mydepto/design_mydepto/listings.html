@@ -1,17 +1,16 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Inicio</title>
+   <title>All Listings</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -23,7 +22,6 @@
    <nav class="navbar nav-1">
       <section class="flex">
          <a href="home.html" class="logo"><i class="fas fa-house"></i>MyDepto</a>
-
          <ul>
             <li><a href="post_property.html">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
          </ul>
@@ -36,33 +34,33 @@
 
          <div class="menu">
             <ul>
-               <li><a href="home.html#novedades">Novedades</a></li>
+               <li><a href="#">Publicar<i class="fas fa-angle-down"></i></a>
+                  <ul>
+                     <li><a href="post_property.html">Publicar propiedad</a></li>
+                     <li><a href="#">Panel de control</a></li>
+                  </ul>
+               </li>
                <li><a href="search.html">Buscar</a>
                </li>
                <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
                   <ul>
-                     <li><a href="{% url 'about' %}">Sobre nosotros</a></i></li>
-                     <li><a href="{% url 'contact' %}">Contactanos</a></i></li>
+                     <li><a href="about.html">Sobre nosotros</a></i></li>
+                     <li><a href="contact.html">Contactanos</a></i></li>
+                     <li><a href="contact.html#faq">FAQ</a></i></li>
                   </ul>
                </li>
             </ul>
          </div>
-         {% if user.is_authenticated %}
+
          <ul>
             <li><a href="#">Favoritos <i class="far fa-heart"></i></a></li>
             <li><a href="#">Cuenta <i class="fas fa-angle-down"></i></a>
                <ul>
-                  <li><a href="#">Ver perfil</a></li>
-                  <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+                  <li><a href="login.html">Iniciar sesion</a></li>
+                  <li><a href="register.html">Registrarse</a></li>
                </ul>
             </li>
          </ul>
-         {% else %}
-         <ul>
-            <li><a href="{% url 'register' %}">Registrarse <!--<i class="far fa-heart"></i>--></a></li>
-            <li><a href="{% url 'login' %}">Iniciar sesion <!--<i class="fas fa-angle-down"></i>--></a></li>
-         </ul>
-         {% endif %}
       </section>
    </nav>
 
@@ -70,109 +68,11 @@
 
 <!-- header section ends -->
 
-<!-- home section starts  -->
-
-<div class="home">
-
-   <section class="center">
-
-      <form action="search.html" method="post">
-         <h3>Encontra tu depto ideal</h3>
-         <div class="box">
-            <p>Ubicacion <span>*</span></p>
-            <input type="text" name="location" required maxlength="50" placeholder="Ingresa la ubicacion" class="input">
-         </div>
-         <div class="flex">
-            <div class="box">
-               <p>Tipo de propiedad <span>*</span></p>
-               <select name="type" class="input" required>
-                  <option value="flat">Departamento</option>
-                  <option value="house">Casa</option>
-               </select>
-            </div>
-            <div class="box">
-               <p>¿Cuantas habitaciones? <span>*</span></p>
-               <select name="bhk" class="input" required>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-               </select>
-            </div>
-            <div class="box">
-               <p>Presupuesto minimo <span>*</span></p>
-               <select name="minimum" class="input" required>
-                  <option value="30000">30.000</option>
-                  <option value="50000">50.000</option>
-                  <option value="80000">80.000</option>
-                  <option value="100000">100.000</option>
-                  <option value="120000">120.000</option>
-               </select>
-            </div>
-            <div class="box">
-               <p>Presupuesto minimo <span>*</span></p>
-               <select name="maximum" class="input" required>
-                  <option value="30000">30.000</option>
-                  <option value="50000">50.000</option>
-                  <option value="80000">80.000</option>
-                  <option value="100000">100.000</option>
-                  <option value="120000">120.000</option>
-                  <option value="140000">140.000</option>
-                  <option value="150000">150.000</option>
-               </select>
-            </div>
-         </div>
-         <input type="submit" value="Buscar" name="search" class="btn">
-      </form>
-
-   </section>
-
-</div>
-
-<!-- home section ends -->
-
-<!-- services section starts  -->
-
-<section class="services">
-
-   <h1 class="heading">Nuestros servicios</h1>
-
-   <div class="box-container">
-
-      <div class="box">
-         <img src="images/icon-1.png" alt="">
-         <h3>Buscar por ubicacion</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
-      </div>
-
-      <div class="box">
-         <img src="images/icon-2.png" alt="">
-         <h3>Publicar propiedad</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
-      </div>
-
-      <div class="box">
-         <img src="images/icon-6.png" alt="">
-         <h3>servicio 24/7</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
-      </div>
-
-   </div>
-
-</section>
-
-<!-- services section ends -->
-
 <!-- listings section starts  -->
 
-<section class="listings" id="novedades">
+<section class="listings">
 
-   <h1 class="heading">Novedades</h1>
+   <h1 class="heading">Toda la lista</h1>
 
    <div class="box-container">
 
@@ -256,13 +156,11 @@
 
    </div>
 
-   <div style="margin-top: 2rem; text-align:center;">
-      <a href="listings.html" class="inline-btn">Ver todo</a>
-   </div>
-
 </section>
 
 <!-- listings section ends -->
+
+
 
 
 

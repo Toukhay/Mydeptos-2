@@ -179,12 +179,11 @@ section{
    display: none;
 }
 
-.home {
-   background: url('static/media/images/home-bg.jpg') no-repeat;
+.home{
+   background:url('../images/home-bg.jpg') no-repeat;
    background-size: cover;
    background-position: center;
 }
-
 
 .home .center{
    min-height: 85vh;
@@ -235,6 +234,115 @@ section{
 
 .home .center form .box p span{
    color: var(--main-color);
+}
+
+.user-form-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   padding: 0 20px;
+   box-sizing: border-box;
+   flex-direction: column;
+}
+
+.user-form-container form {
+   background-color: var(--white);
+   padding: 2rem;
+   box-shadow: var(--box-shodow);
+   width: 50rem;
+   max-width: 100%;
+   text-align: center;
+   margin-top: 2rem;
+}
+
+.user-form-container form h1 {
+   margin-bottom: 2rem;
+}
+
+.user-form-container form label {
+   display: block;
+   margin-bottom: 0.5rem;
+}
+
+.user-form-container form input[type="text"],
+.user-form-container form input[type="password"],
+.user-form-container form input[type="tel"],
+.user-form-container form input[type="email"] {
+   width: calc(100% - 30px);
+   padding: 10px;
+   border: 1px solid var(--light-color);
+   border-radius: 4px;
+   margin-bottom: 1rem;
+   font-size: 1.8rem;
+}
+
+.user-form-container form button {
+   background-color: var(--main-color);
+   color: var(--white);
+   padding: 12px 30px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 1.8rem;
+   text-transform: uppercase;
+   transition: background-color 0.3s ease;
+}
+
+.user-form-container form button:hover {
+   background-color: var(--black);
+}
+
+.post-property-container {
+   max-width: 600px;
+   margin: 50px auto;
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-property-form {
+   display: flex;
+   flex-direction: column;
+}
+   
+.post-property-h2 {
+   text-align: center;
+   color: #333;
+}
+   
+.post-property-label {
+   margin-top: 10px;
+   font-weight: bold;
+   color: #555;
+}
+
+.post-property-input,
+.post-property-select,
+.post-property-textarea {
+   margin-bottom: 15px;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+   
+.post-property-textarea {
+   resize: vertical;
+}
+
+.post-property-submit-btn {
+   background-color: #DA2C32;
+   color: #fff;
+   padding: 12px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.post-property-submit-btn:hover {
+   background-color: #45a049;
 }
 
 .services .box-container{
@@ -588,7 +696,7 @@ section{
 
 .steps .box-container .box{
    background-color: var(--white);
-   padding: 2rem;
+   padding: 3rem;
    text-align: center;
    box-shadow: var(--box-shodow);
 }
@@ -855,7 +963,24 @@ section{
    text-decoration: underline;
 }
 
+.favorite-listings {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   grid-gap: 20px;
+   margin-top: 20px;
+}
 
+.favorite-listing {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-listing img {
+   width: 100%;
+   border-radius: 5px;
+}
 
 
 

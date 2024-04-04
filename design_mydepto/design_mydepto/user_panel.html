@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Panel de Usuario</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header class="header">
+
+        <nav class="navbar nav-1">
+           <section class="flex">
+              <a href="home.html" class="logo"><i class="fas fa-house"></i>MyDepto</a>
+     
+              <ul>
+                 <li><a href="post_property.html">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
+              </ul>
+           </section>
+        </nav>
+     
+        <nav class="navbar nav-2">
+           <section class="flex">
+              <div id="menu-btn" class="fas fa-bars"></div>
+     
+              <div class="menu">
+                 <ul>
+                    <li><a href="home.html#novedades">Novedades</a></li>
+                    <li><a href="search.html">Buscar</a>
+                    </li>
+                    <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
+                       <ul>
+                          <li><a href="about.html">Sobre nosotros</a></i></li>
+                          <li><a href="contact.html">Contactanos</a></i></li>
+                       </ul>
+                    </li>
+                 </ul>
+              </div>
+     
+              <ul>
+                 <li><a href="register.html">Registrarse <!--<i class="far fa-heart"></i>--></a></li>
+                 <li><a href="login.html">Iniciar sesion <!--<i class="fas fa-angle-down"></i>--></a></li>
+              </ul>
+           </section>
+        </nav>
+     
+     </header>
+    <div class="user-form-container">
+        <h1>Panel de Usuario</h1>
+        <form id="userForm">
+            <!-- Tus campos de formulario aquí -->
+            <label for="propertyImages" class="post-property-label">Subir Fotos (máx. 5)</label>
+            <input type="file" name="propertyImages[]" id="propertyImages" multiple accept="image/*" class="post-property-input" />
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" readonly>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password">
+            
+            <label for="location">Localidad:</label>
+            <input type="text" id="location" name="location">
+            
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" name="phone">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            
+            <label for="instagram">Instagram:</label>
+            <input type="text" id="instagram" name="instagram">
+            
+            <label for="facebook">Facebook:</label>
+            <input type="text" id="facebook" name="facebook">
+            
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+
+<!-- footer section starts  -->
+
+<footer class="footer">
+
+    <section class="flex">
+ 
+       <div class="box">
+          <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>mydepto@gmail.com</span></a>
+       </div>
+ 
+       <div class="box">
+          <a href="home.html"><span>Inicio</span></a>
+          <a href="about.html"><span>Sobre nosotros</span></a>
+          <a href="contact.html"><span>Contacto</span></a>
+          <a href="listings.html"><span>Propiedades</span></a>
+       </div>
+ 
+       <div class="box">
+          <a href="#"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><span>instagram</span><i class="fab fa-instagram"></i></a>
+ 
+       </div>
+ 
+    </section>
+ 
+    <div class="credit">&copy; copyright @ 2025 by <span>mydepto</span> | todos los derechos reservados</div>
+ 
+ </footer>
+ 
+ <!-- footer section ends -->
+ 
+ 
+ <!-- custom js file link  -->
+ <script src="js/script.js"></script>
+ 
+ </body>
+ </html>    
+</body>
+</html>

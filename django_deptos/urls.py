@@ -30,6 +30,7 @@ urlpatterns = [
     path('contact/', hviews.contact, name='contact'),
     path('listings/', hviews.listings, name='listings'),
     path('usuarios/login/', views.login_view, name='login'),
+    path('usuarios/logout/',views.logout_view, name='logout'),
     path('register/', hviews.register, name='register'),
     path('search/', hviews.search, name='search'),
     path('view_property/', hviews.view_property, name='view_property'),

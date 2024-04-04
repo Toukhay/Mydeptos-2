@@ -1,17 +1,16 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Inicio</title>
+   <title>Inicio reg</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -23,46 +22,40 @@
    <nav class="navbar nav-1">
       <section class="flex">
          <a href="home.html" class="logo"><i class="fas fa-house"></i>MyDepto</a>
-
          <ul>
             <li><a href="post_property.html">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
          </ul>
       </section>
    </nav>
 
-   <nav class="navbar nav-2">
-      <section class="flex">
-         <div id="menu-btn" class="fas fa-bars"></div>
+<nav class="navbar nav-2">
+    <section class="flex">
+        <div id="menu-btn" class="fas fa-bars"></div>
 
-         <div class="menu">
+        <div class="menu">
             <ul>
-               <li><a href="home.html#novedades">Novedades</a></li>
-               <li><a href="search.html">Buscar</a>
-               </li>
-               <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
-                  <ul>
-                     <li><a href="{% url 'about' %}">Sobre nosotros</a></i></li>
-                     <li><a href="{% url 'contact' %}">Contactanos</a></i></li>
-                  </ul>
-               </li>
+                <li><a href="home.html#novedades">Novedades</a></li>
+                <li><a href="search.html">Buscar</a>
+                </li>
+                <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
+                    <ul>
+                        <li><a href="about.html">Sobre nosotros</a></i></li>
+                        <li><a href="contact.html">Contactanos</a></i></li>
+                        <li><a href="contact.html#faq">FAQ</a></i></li>
+                    </ul>
+                </li>
             </ul>
-         </div>
-         {% if user.is_authenticated %}
+        </div>
+
          <ul>
             <li><a href="#">Favoritos <i class="far fa-heart"></i></a></li>
             <li><a href="#">Cuenta <i class="fas fa-angle-down"></i></a>
                <ul>
                   <li><a href="#">Ver perfil</a></li>
-                  <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+                  <li><a href="#">Cerrar sesion</a></li>
                </ul>
             </li>
          </ul>
-         {% else %}
-         <ul>
-            <li><a href="{% url 'register' %}">Registrarse <!--<i class="far fa-heart"></i>--></a></li>
-            <li><a href="{% url 'login' %}">Iniciar sesion <!--<i class="fas fa-angle-down"></i>--></a></li>
-         </ul>
-         {% endif %}
       </section>
    </nav>
 
@@ -170,9 +163,9 @@
 
 <!-- listings section starts  -->
 
-<section class="listings" id="novedades">
+<section class="listings">
 
-   <h1 class="heading">Novedades</h1>
+   <h1 class="heading">Listado reciente</h1>
 
    <div class="box-container">
 
