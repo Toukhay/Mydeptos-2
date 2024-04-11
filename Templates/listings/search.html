@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Página de búsqueda</title>
+
+   <!-- Enlace al CDN de Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- Enlace al archivo CSS personalizado -->
+   <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+   
+<!-- Comienza la sección del encabezado -->
+
+<header class="header">
+
+   <nav class="navbar nav-1">
+      <section class="flex">
+         <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
+
+         <ul>
+            <li><a href="#">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
+         </ul>
+      </section>
+   </nav>
+   
+   <nav class="navbar nav-2">
+      <section class="flex">
+         <div id="menu-btn" class="fas fa-bars"></div>
+
+         <div class="menu">
+            <ul>
+               <li><a href="{% url 'home' %}#latest-listings">Novedades</a></li>
+               <li><a href="{% url 'search' %}">Buscar</a>
+               </li>
+               <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
+                  <ul>
+                     <li><a href="{% url 'about' %}">Sobre nosotros</a></li>
+                     <li><a href="{% url 'contact' %}">Contáctanos</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+
+         <ul>            
+            <li><a href="{% url 'login' %}">Inicia sesión</a></li>
+            <li><a href="{% url 'register' %}">Regístrate</a></li>
+         </ul>
+      </section>
+   </nav>
+
+</header>
+
+<!-- Termina la sección del encabezado -->
+
+<!-- Comienza la sección de filtro de búsqueda -->
+
+<section class="filters" style="padding-bottom: 0;">
+
+   <form action="" method="post">
+      <div id="close-filter"><i class="fas fa-times"></i></div>
+      <h3>filtrar tu búsqueda</h3>
+         
+         <div class="flex">
+            <div class="box">
+               <p>Ingresa ubicacion</p>
+               <input type="text" name="location" required maxlength="50" placeholder="ingresa el nombre de la ciudad" class="input">
+            </div>
+
+            <div class="box">
+               <p>Tipo de propiedad</p>
+               <select name="type" class="input" required>
+                  <option value="departamento">Departamento</option>
+                  <option value="casa">Casa</option>
+               </select>
+            </div>
+            <div class="box">
+               <p>¿Cuantas habitaciones?</p>
+               <select name="bhk" class="input" required>
+                  <option value="1">1 </option>
+                  <option value="2">2 </option>
+                  <option value="3">3 </option>
+                  <option value="4">4 </option>
+                  <option value="5">5 </option>
+                  <option value="6">6 </option>
+                  <option value="7">7 </option>
+                  <option value="8">8 </option>
+                  <option value="9">9 </option>
+               </select>
+            </div>
+            <div class="box">
+               <p>Presupuesto máximo</p>
+               <select name="minimum" class="input" required>
+                  <option value="100000">ARS 100.000</option>
+                  <option value="200000">ARS 200.000</option>
+                  <option value="300000">ARS 300.000</option>
+                  <option value="400000">ARS 400.000</option>
+                  <option value="500000">ARS 500.000</option>
+                  <option value="600000">ARS 600.000</option>
+                  <option value="700000">ARS 700.000</option>
+                  <option value="800000">ARS 800.000</option>
+                  <option value="900000">ARS 900.0000</option>
+                  <option value="1000000">ARS 1000.000</option>
+                  <option value="10000000">ARS 1.000.000 </option>
+                  <option value="20000000">ARS 2.000.000 </option>
+               </select>
+            </div>
+            <div class="box">
+               <p>Presupuesto máximo</p>
+               <select name="maximum" class="input" required>
+                  <option value="100000">ARS 100.000</option>
+                  <option value="200000">ARS 200.000</option>
+                  <option value="300000">ARS 300.000</option>
+                  <option value="400000">ARS 400.000</option>
+                  <option value="500000">ARS 500.000</option>
+                  <option value="600000">ARS 600.000</option>
+                  <option value="700000">ARS 700.000</option>
+                  <option value="800000">ARS 800.000</option>
+                  <option value="900000">ARS 900.0000</option>
+                  <option value="1000000">ARS 1000.000</option>
+                  <option value="10000000">ARS 1.000.000 </option>
+                  <option value="20000000">ARS 2.000.000 </option>
+               </select>
+            </div>
+            <div class="box">
+               <p>Estado</p>
+               <select name="status" class="input" required>
+                  <option value="por salir">Por funcionar</option>
+                  <option value="libre">Libre</option>
+               </select>
+            </div>
+            <div class="box">
+               <p>Amueblado</p>
+               <select name="furnished" class="input" required>
+                  <option value="sin amueblar">Sin amueblar</option>
+                  <option value="amueblado">Amueblado</option>
+                  <option value="semi-amueblado">Semi-amueblado</option>
+               </select>
+            </div>
+         </div>
+         <input type="submit" value="buscar propiedad" name="search" class="btn">
+   </form>
+
+</section>
+
+<!-- Termina la sección de filtro de búsqueda -->
+
+<div id="filter-btn" class="fas fa-filter"></div>
+
+<!-- Comienza la sección de listados -->
+
+<section class="listings">
+
+   <h1 class="heading">Resultado de busqueda</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <div class="admin">
+            <h3>JL</h3>
+            <div>
+               <p>Juan Lopez (Dueño directo) </p>
+               <span>10-11-2024</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <p class="total-images"><i class="far fa-image"></i><span>4</span></p>
+            <p class="type"><span>Departamento</span><span>Libre</span></p>
+            <form action="" method="post" class="save">
+               <button type="submit" name="save" class="far fa-heart"></button>
+            </form>
+            <img src="{% static 'media/images/house-img-2.webp' %}" alt="">
+         </div>
+         <h3 class="name">Departamento moderno</h3>
+         <p class="location"><i class="fas fa-map-marker-alt"></i><span> Jose Ing., Quiroga - 401303</span></p>
+         <div class="flex">
+            <p><i class="fas fa-bed"></i><span>3</span></p>
+            <p><i class="fas fa-bath"></i><span>2</span></p>
+            <p><i class="fas fa-maximize"></i><span>750</span></p>
+         </div>
+         <a href="{% url 'view_property' %}" class="btn">Ver propiedad</a>
+      </div>
+
+      <div class="box">
+         <div class="admin">
+            <h3>MG</h3>
+            <div>
+               <p>Maria Gomez (Inmobiliaria) </p>
+               <span>10-11-2024</span>
+            </div>
+         </div>
+         <div class="thumb"> 
+            <p class="total-images"><i class="far fa-image"></i><span>4</span></p>
+            <p class="type"><span>Departamento</span><span>Ocupado</span></p>
+            <form action="" method="post" class="save">
+               <button type="submit" name="save" class="far fa-heart"></button>
+            </form>
+            <img src="{% static 'media/images/house-img-1.webp' %}" alt="">
+         </div>
+         <h3 class="name">Departamento estudiantil</h3>
+         <p class ="location"><i class="fas fa-map-marker-alt"></i><span> Av. San Martin - 401303</span></p>
+         <div class="flex">
+            <p><i class="fas fa-bed"></i><span>2</span></p>
+            <p><i class="fas fa-bath"></i><span>1</span></p>
+            <p><i class="fas fa-maximize"></i><span>500m²</span></p>
+         </div>
+         <a href="{% url 'view_property' %}" class="btn">Ver propiedad</a>
+      </div>
+      <!-- Otros listados -->
+
+   </div>
+
+   <div style="margin-top: 2rem; text-align:center;">
+      <a href="{% url 'listings' %}" class="inline-btn">Ver todo</a>
+   </div>
+
+</section>
+
+<!-- Termina la sección de listados -->
+
+<!-- Comienza la sección del pie de página -->
+
+<footer class="footer">
+
+   <section class="flex">
+
+      <div class="box">
+
+         <a href="mailto:mydeptos@gmail.com"><i class="fas fa-envelope"></i><span>mydeptos@gmail.com</span></a>
+      </div>
+
+      <div class="box">
+         <a href="{% url 'home' %}"><span>Inicio</span></a>
+         <a href="{% url 'about' %}"><span>Sobre nosotros</span></a>
+         <a href="{% url 'contact' %}"><span>Contáctanos</span></a>
+         <a href="{% url 'listings' %}"><span>Todas las Propiedades</span></a>
+      </div>
+
+      <div class="box">
+         <a href="#"><span>Facebook</span><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><span>Instagram</span><i class="fab fa-instagram"></i></a>
+      </div>
+
+   </section>
+
+   <div class="credit">&copy; copyright @ 2025 by <span>Mydeptos</span> | todos los derechos reservados</div>
+
+</footer>
+
+<!-- Termina la sección del pie de página -->
+
+
+<!-- Enlace al archivo JS personalizado -->
+<script src="{% static 'script.js' %}"></script>
+
+<script>
+
+document.querySelector('#filter-btn').onclick = () =>{
+   document.querySelector('.filters').classList.add('active');
+}
+
+document.querySelector('#close-filter').onclick = () =>{
+   document.querySelector('.filters').classList.remove('active');
+}
+
+</script>
+
+</body>
+</html>

@@ -76,19 +76,32 @@
 
 <section class="form-container">
 
-   <form action="" method="post">
+    <form method="post">
       <h3>¡Crea una cuenta!</h3>
       {% csrf_token %}
-      {% comment %} <input type="text" name="name" required maxlength="50" placeholder="Ingresa tu nombre" class="box">
+      {% comment %} <div class="box">
+         {{form.username.label_tag}}
+         {{ form.username }}
+      </div>
+      <input type="text" name="name" required maxlength="50" placeholder="Ingresa tu nombre" class="box">
       <input type="email" name="email" required maxlength="50" placeholder="Ingresa tu correo electrónico" class="box">
       <input type="number" name="phone" required maxlength="50" placeholder="Ingresa tu telefono" class="box">
       <input type="text" name="localidad" required maxlength="50" placeholder="Ingresa tu localidad" class="box">
       <input type="password" name="password" required maxlength="20" placeholder="Ingresa tu contraseña" class="box">
-      <input type="password" name="c_pass" required maxlength="20" placeholder="Confirma tu contraseña" class="box"> {% endcomment %}
-      <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+      <input type="password" name="c_pass" required maxlength="20" placeholder="Confirma tu contraseña" class="box">
+      <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p> {% endcomment %}
+      {% for field in form %}
+      
+         
+         {{field}}
+         
+         {% if field.errors %}
+         {{field.errors}}
+         {% endif %}
+     
+      {% endfor %}
       <input type="submit" value="Registrarse ahora" name="submit" class="btn">
    </form>
-
 </section>
 
 <!-- Termina la sección de registro -->

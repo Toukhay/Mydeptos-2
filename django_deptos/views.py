@@ -7,6 +7,8 @@ from django.shortcuts import redirect
 from django.contrib.auth import logout
 from .forms import RegisterForm
 
+from django.contrib.auth.models import User
+
 def login_view(request):
 
     if request.user.is_authenticated:
@@ -40,13 +42,16 @@ def registro(request):
     form = RegisterForm(request.POST or None)
 
     if request.method == 'POST' and form.is_valid():
-        nombre = form.cleaned_data.get('name')
-        correo = form.cleaned_data.get('email')
+        username = form.cleaned_data.get('username')
+        email = form.cleaned_data.get('email')
         password = form.cleaned_data.get('password')
-        telefono = form.cleaned_data.get('phone')
+        phone = form.cleaned_data.get('phone')
         localidad = form.cleaned_data.get('localidad')
 
-        user = User.objects.create_user(nombre,correo,password, telefono, localidad)
+        user = User.objects.create_user(username=username,email=email,password=password)
+        user.phone = phone
+        user.localidad = localidad
+        
         if user:
             login(request,user)
             messages.success(request,'Usuario creado existosamente')
@@ -57,5 +62,5 @@ def registro(request):
             return redirect('home')
 
     return render(request, 'usuarios/register.html',{
-        "form":form
+        'form':form
     })

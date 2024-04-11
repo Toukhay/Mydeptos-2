@@ -34,11 +34,11 @@ def contact(request):
 def listings(request):
     listings = Listing.objects.all()
     context = {'listings': listings}
-    return render(request, 'listings.html', context)
+    return render(request, 'listings/listings.html', context)
 
 
 def search(request):
-    return render(request, 'search.html')
+    return render(request, 'listings/search.html')
 
 def view_property(request):
     return render(request, 'view_property.html')

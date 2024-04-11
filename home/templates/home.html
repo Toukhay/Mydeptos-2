@@ -37,7 +37,7 @@
          <div class="menu">
             <ul>
                <li><a href="home.html#novedades">Novedades</a></li>
-               <li><a href="search.html">Buscar</a>
+               <li><a href="{% url 'search' %}">Buscar</a>
                </li>
                <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
                   <ul>
@@ -257,7 +257,7 @@
    </div>
 
    <div style="margin-top: 2rem; text-align:center;">
-      <a href="listings.html" class="inline-btn">Ver todo</a>
+      <a href="{% url 'listings' %}" class="inline-btn">Ver todo</a>
    </div>
 
 </section>
