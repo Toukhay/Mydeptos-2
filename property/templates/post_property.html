@@ -8,38 +8,33 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Inicio</title>
 
-   <!-- Enlace al archivo de fuente impresionante (font awesome)  -->
+   <!-- Font Awesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-   <!-- Enlace al archivo de estilo personalizado  -->
-   <link rel="stylesheet" href="{% static 'style.css' %}">
-
+   <!-- Custom Styles -->
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
    
-<!-- Comienza la sección de encabezado -->
-
 <header class="header">
-
+   <!-- Navigation - Top -->
    <nav class="navbar nav-1">
       <section class="flex">
          <a href="{% url 'home' %}" class="logo"><i class="fas fa-house"></i>MyDeptos</a>
-
          <ul>
             <li><a href="{% url 'post_property' %}">Publicar propiedad<i class="fas fa-paper-plane"></i></a></li>
          </ul>
       </section>
    </nav>
-   
+
+   <!-- Navigation - Bottom -->
    <nav class="navbar nav-2">
       <section class="flex">
          <div id="menu-btn" class="fas fa-bars"></div>
-
          <div class="menu">
             <ul>
                <li><a href="{% url 'home' %}#latest-listings">Novedades</a></li>
-               <li><a href="{% url 'search' %}">Buscar</a>
-               </li>
+               <li><a href="{% url 'search' %}">Buscar</a></li>
                <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
                   <ul>
                      <li><a href="{% url 'about' %}">Sobre nosotros</a></li>
@@ -48,79 +43,72 @@
                </li>
             </ul>
          </div>
-
          <ul>            
             <li><a href="{% url 'login' %}">Inicia sesión</a></li>
             <li><a href="{% url 'register' %}">Regístrate</a></li>
          </ul>
       </section>
    </nav>
-
 </header>
-   <div class="post-property-container">
+
+<!-- Post Property Form -->
+<div class="post-property-container">
+   <div class="form-wrapper">
       <form action="#" method="post" enctype="multipart/form-data" class="post-property-form">
-               <h2 class="post-property-h2">Publicar Propiedad</h2>
+         <h2 class="post-property-h2">Publicar Propiedad</h2>
 
-               <label for="propertyImages" class="post-property-label">Subir Fotos (máx. 5)</label>
-               <input type="file" name="propertyImages[]" id="propertyImages" multiple accept="image/*" class="post-property-input" />
+         <label for="propertyImages" class="post-property-label">Subir Fotos (máx. 5)</label>
+         <input type="file" name="propertyImages[]" id="propertyImages" multiple accept="image/*" class="post-property-input" />
 
-               <label for="listingType" class="post-property-label">Tipo de Anunciante</label>
-               <select name="listingType" id="listingType" class="post-property-select">
-                  <option value="inmobiliaria">Inmobiliaria</option>
-                  <option value="dueno_directo">Dueño Directo</option>
-               </select>
+         <label for="listingType" class="post-property-label">Tipo de Anunciante</label>
+         <select name="listingType" id="listingType" class="post-property-select">
+            <option value="inmobiliaria">Inmobiliaria</option>
+            <option value="dueno_directo">Dueño Directo</option>
+         </select>
 
-               <label for="contactInfo" class="post-property-label">Información de Contacto</label>
-               <textarea name="contactInfo" id="contactInfo" rows="4" placeholder="Ingrese información de contacto..." class="post-property-textarea"></textarea>
+         <label for="contactInfo" class="post-property-label">Información de Contacto</label>
+         <textarea name="contactInfo" id="contactInfo" rows="4" placeholder="Ingrese información de contacto..." class="post-property-textarea"></textarea>
 
-               <label for="propertyDescription" class="post-property-label">Descripción de la Propiedad</label>
-               <textarea name="propertyDescription" id="propertyDescription" rows="4" placeholder="Ingrese la descripción de la propiedad..." class="post-property-textarea"></textarea>
+         <label for="propertyDescription" class="post-property-label">Descripción de la Propiedad</label>
+         <textarea name="propertyDescription" id="propertyDescription" rows="4" placeholder="Ingrese la descripción de la propiedad..." class="post-property-textarea"></textarea>
 
-               <label for="propertyType" class="post-property-label">Tipo de Propiedad</label>
-               <input type="text" name="propertyType" id="propertyType" placeholder="Ej. Departamento, Casa, Local, etc." class="post-property-input" />
+         <label for="propertyType" class="post-property-label">Tipo de Propiedad</label>
+         <input type="text" name="propertyType" id="propertyType" placeholder="Ej. Departamento, Casa, Local, etc." class="post-property-input" />
 
-               <label for="bedrooms" class="post-property-label">Número de Habitaciones</label>
-               <input type="number" name="bedrooms" id="bedrooms" min="0" class="post-property-input" />
+         <label for="bedrooms" class="post-property-label">Número de Habitaciones</label>
+         <input type="number" name="bedrooms" id="bedrooms" min="0" class="post-property-input" />
 
-               <label for="price" class="post-property-label">Precio (en ARS)</label>
-               <input type="number" name="price" id="price" min="0" class="post-property-input" />
+         <label for="price" class="post-property-label">Precio (en ARS)</label>
+         <input type="number" name="price" id="price" min="0" class="post-property-input" />
 
-               <!-- Agrega más campos según sea necesario -->
+         <!-- Add more fields as needed -->
 
-               <input type="submit" value="Publicar Propiedad" class="post-property-submit-btn" />
+         <input type="submit" value="Publicar Propiedad" class="post-property-submit-btn" />
       </form>
    </div>
+</div>
 
-   <footer class="footer">
+<footer class="footer">
+   <section class="flex">
+      <div class="box">
+         <a href="mailto:mydeptos@gmail.com"><i class="fas fa-envelope"></i><span>mydeptos@gmail.com</span></a>
+      </div>
+      <div class="box">
+         <a href="{% url 'home' %}"><span>Inicio</span></a>
+         <a href="{% url 'about' %}"><span>Sobre nosotros</span></a>
+         <a href="{% url 'contact' %}"><span>Contáctanos</span></a>
+         <a href="{% url 'view_property' %}"><span>Todas las Propiedades</span></a>
+      </div>
+      <div class="box">
+         <a href="#"><span>Facebook</span><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><span>Instagram</span><i class="fab fa-instagram"></i></a>
+      </div>
+   </section>
+   <div class="credit">&copy; copyright @ 2025 by <span>Mydeptos</span> | todos los derechos reservados</div>
+</footer>
 
-      <section class="flex">
-   
-         <div class="box">
-   
-            <a href="mailto:mydeptos@gmail.com"><i class="fas fa-envelope"></i><span>mydeptos@gmail.com</span></a>
-         </div>
-   
-         <div class="box">
-            <a href="{% url 'home' %}"><span>Inicio</span></a>
-            <a href="{% url 'about' %}"><span>Sobre nosotros</span></a>
-            <a href="{% url 'contact' %}"><span>Contáctanos</span></a>
-            <a href="{% url 'view_property' %}"><span>Todas las Propiedades</span></a>
-         </div>
-   
-         <div class="box">
-            <a href="#"><span>Facebook</span><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><span>Instagram</span><i class="fab fa-instagram"></i></a>
-         </div>
-   
-      </section>
-   
-      <div class="credit">&copy; copyright @ 2025 by <span>Mydeptos</span> | todos los derechos reservados</div>
-   
-   </footer>
-   <!-- Termina la sección de "Pie de página" -->
-   
-   <!-- Enlace al archivo JS personalizado -->
-   <script src="{% static 'script.js' %}"></script>
-   
-   </body>
-   </html>
+<!-- Custom JavaScript -->
+<script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>

@@ -545,6 +545,69 @@ section{
    line-height: 1.5;
 }
 
+.post-property-container {
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 20px;
+   text-align: center; /* Centra el formulario */
+}
+
+.post-property-form {
+   background-color: #f9f9f9;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   width: 100%;
+}
+
+.post-property-h2 {
+   margin-bottom: 20px;
+}
+
+.post-property-label {
+   display: block;
+   margin-bottom: 8px;
+   text-align: left; /* Alinea las etiquetas a la izquierda */
+}
+
+.post-property-input,
+.post-property-textarea,
+.post-property-select {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 15px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
+.post-property-submit-btn {
+   display: block;
+   width: 100%;
+   padding: 10px;
+   border: none;
+   border-radius: 4px;
+   background-color: #007bff;
+   color: #fff;
+   cursor: pointer;
+}
+
+.post-property-submit-btn:hover {
+   background-color: #0056b3;
+}
+
+/* Optional: Style select dropdown arrow */
+.post-property-select {
+   appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>');
+   background-repeat: no-repeat;
+   background-position: right 8px top 50%;
+   background-size: 16px;
+   padding-right: 30px; /* Adjust as needed */
+}
+
 .about .row{
    display: flex;
    flex-wrap: wrap;
