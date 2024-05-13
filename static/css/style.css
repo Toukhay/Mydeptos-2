@@ -304,7 +304,7 @@ button {
    display: block;
    width: 100%;
    padding: 10px;
-   background-color: #f70707;
+   background-color: #da2c32;
    color: #fff;
    border: none;
    border-radius: 5px;
@@ -500,26 +500,27 @@ button:hover {
    color: var(--main-color);
 }
 
-.view-property .details{
+/* Estilos generales */
+.view-property .details {
    background-color: var(--white);
    box-shadow: var(--box-shodow);
    padding: 2rem;
    overflow-x: hidden;
 }
 
-.view-property .details .thumb{
+.view-property .details .thumb {
    background-color: var(--black);
    padding: 1.5rem;
    margin-bottom: 1.5rem;
 }
 
-.view-property .details .thumb .big-image img{
+.view-property .details .thumb .big-image img {
    height: 40rem;
    width: 100%;
    object-fit: contain;
 }
 
-.view-property .details .thumb .small-images{
+.view-property .details .thumb .small-images {
    display: flex;
    justify-content: center;
    gap: 1.5rem;
@@ -527,7 +528,7 @@ button:hover {
    flex-wrap: wrap;
 }
 
-.view-property .details .thumb .small-images img{
+.view-property .details .thumb .small-images img {
    height: 7rem;
    width: 10rem;
    object-fit: cover;
@@ -535,29 +536,29 @@ button:hover {
    transition: .2s linear;
 }
 
-.view-property .details .thumb .small-images img:hover{
+.view-property .details .thumb .small-images img:hover {
    transform: scale(1.1);
 }
 
-.view-property .details .name{
+.view-property .details .name {
    font-size: 2rem;
    text-overflow: ellipsis;
    overflow-x: hidden;
    margin-bottom: .5rem;
 }
 
-.view-property .details .location{
+.view-property .details .location {
    padding-top: 1rem;
    font-size: 1.6rem;
    color: var(--light-color);
 }
 
-.view-property .details .location i{
+.view-property .details .location i {
    margin-right: 1rem;
    color: var(--main-color);
 }
 
-.view-property .details .info{
+.view-property .details .info {
    display: flex;
    background-color: var(--light-bg);
    padding: 1.5rem;
@@ -568,54 +569,54 @@ button:hover {
    gap: 2rem;
 }
 
-.view-property .details .info p{
+.view-property .details .info p {
    font-size: 1.7rem;
 }
 
 .view-property .details .info p span,
-.view-property .details .info p a{
+.view-property .details .info p a {
    color: var(--light-color);
 }
 
-.view-property .details .info p a:hover{
+.view-property .details .info p a:hover {
    text-decoration: underline;
 }
 
-.view-property .details .info p i{
+.view-property .details .info p i {
    margin-right: 1.5rem;
    color: var(--main-color);
 }
 
-.view-property .details .title{
+.view-property .details .title {
    font-size: 2rem;
    color: var(--black);
    padding-bottom: 1.5rem;
    border-bottom: var(--border);
 }
 
-.view-property .details .flex{
+.view-property .details .flex {
    margin: 1.5rem 0;
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
 }
 
-.view-property .details .flex .box{
+.view-property .details .flex .box {
    flex: 1 1 40rem;
 }
 
-.view-property .details .flex .box p{
+.view-property .details .flex .box p {
    padding: .5rem 0;
    font-size: 1.6rem;
    color: var(--light-color);
 }
 
-.view-property .details .flex .box i{
+.view-property .details .flex .box i {
    color: var(--main-color);
    margin-right: 1.5rem;
 }
 
-.view-property .details .description{
+.view-property .details .description {
    padding: .5rem 0;
    margin-top: .5rem;
    font-size: 1.6rem;
@@ -623,12 +624,46 @@ button:hover {
    line-height: 1.5;
 }
 
-.view-property .redes .title{
-   font-size: 2rem;
-   color: var(--black);
-   padding-bottom: 1.5rem;
-   border-bottom: var(--border);
+.view-property .details .flex .box a{
+   font-size: 20px;
 }
+
+/* Estilos específicos para las columnas */
+.property-columns {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 20px; /* Espacio entre las columnas */
+}
+/* Estilos para el texto dentro de la clase "redes" */
+.redes {
+   font-size: 20px;
+}
+
+/* Estilos específicos para los enlaces dentro de la clase "box" */
+.redes .box a .fab.fa-facebook-f, 
+.redes .box a .fab.fa-instagram {
+   font-size: 24px; /* Adjust the font size as needed */
+}
+
+.details-box,
+.services-box,
+.redes {
+   background-color: #f9f9f9;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para cada caja */
+/* .details-box {
+   grid-column: 1; /* Esta caja estará en la primera columna */
+
+/* .services-box {
+   grid-column: 2; /* Esta caja estará en la segunda columna */
+
+/* .redes {
+   grid-column: 3; /* Esta caja estará en la tercera columna */
+
 
 .post-property-container {
    max-width: 600px;
@@ -1093,6 +1128,17 @@ button:hover {
    }
 
 }
+
+/* @media (max-width: 768px) {
+   .property-columns {
+      flex-direction: column;
+   }
+
+   .property-column {
+      flex: 1 1 100%;
+      max-width: 100%;
+   }
+} */
 
 @media (max-width:768px){
 

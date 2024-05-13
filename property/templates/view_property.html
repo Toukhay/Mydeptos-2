@@ -2,173 +2,169 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Inicio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
 
-   <!-- Enlace al archivo de fuente impresionante (font awesome)  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Enlace al archivo de fuente impresionante (font awesome)  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-   <!-- Enlace al archivo de estilo personalizado  -->
-   <link rel="stylesheet" href="{% static 'style.css' %}">
-
+    <!-- Enlace al archivo de estilo personalizado  -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
+
 <body>
-   
-<!-- Comienza la sección de encabezado -->
 
-<header class="header">
+    <!-- Comienza la sección de encabezado -->
+    <header class="header">
 
-   <nav class="navbar nav-1">
-      <section class="flex">
-         <a href="{% url 'home' %}" class="logo"><i class="fas fa-house fa-lg"></i>MyDeptos</a>
+        <nav class="navbar nav-1">
+            <section class="flex">
+                <a href="{% url 'home' %}" class="logo"><i class="fas fa-house fa-lg"></i>MyDeptos</a>
 
-         <ul>
-            <li><a href="{% url 'post_property' %}">Publicar propiedad<i class="fas fa-paper-plane fa-lg"></i></a></li>
-         </ul>
-      </section>
-   </nav>
-   
-   <nav class="navbar nav-2">
-      <section class="flex">
-         <div id="menu-btn" class="fas fa-bars fa-lg"></div>
+                <ul>
+                    <li><a href="{% url 'post_property' %}">Publicar propiedad<i class="fas fa-paper-plane fa-lg"></i></a></li>
+                </ul>
+            </section>
+        </nav>
 
-         <div class="menu">
-            <ul>
-               <li><a href="{% url 'home' %}#latest-listings">Novedades</a></li>
-               <li><a href="{% url 'search' %}">Buscar</a>
-               </li>
-               <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
-                  <ul>
-                     <li><a href="{% url 'about' %}">Sobre nosotros</a></li>
-                     <li><a href="{% url 'contact' %}">Contáctanos</a></li>
-                  </ul>
-               </li>
-            </ul>
-         </div>
+        <nav class="navbar nav-2">
+            <section class="flex">
+                <div id="menu-btn" class="fas fa-bars fa-lg"></div>
 
-         <ul>            
-            <li><a href="{% url 'login' %}">Inicia sesión</a></li>
-            <li><a href="{% url 'register' %}">Regístrate</a></li>
-         </ul>
-      </section>
-   </nav>
+                <div class="menu">
+                    <ul>
+                        <li><a href="{% url 'home' %}#latest-listings">Novedades</a></li>
+                        <li><a href="{% url 'search' %}">Buscar</a></li>
+                        <li><a href="#">Ayuda<i class="fas fa-angle-down"></i></a>
+                            <ul>
+                                <li><a href="{% url 'about' %}">Sobre nosotros</a></li>
+                                <li><a href="{% url 'contact' %}">Contáctanos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
 
-</header>
+                <ul>
+                    <li><a href="{% url 'login' %}">Inicia sesión</a></li>
+                    <li><a href="{% url 'register' %}">Regístrate</a></li>
+                </ul>
+            </section>
+        </nav>
 
+    </header>
+    <!-- Sección de encabezado termina -->
 
-<!-- Sección de encabezado termina -->
+    <!-- Sección de vista de propiedad comienza -->
+    <section class="view-property">
 
-<!-- Sección de vista de propiedad comienza -->
-
-<section class="view-property">
-
-   <div class="details">
-      <div class="thumb">
-         <div class="big-image">
-            <img src="images/house-img-1.webp" alt="">
-         </div>
-         <div class="small-images">
-            <img src="images/house-img-1.webp" alt="">
-            <img src="images/hall-img-1.webp" alt="">
-            <img src="images/kitchen-img-1.webp" alt="">
-            <img src="images/bathroom-img-1.webp" alt="">
-         </div>
-      </div>
-      <h3 class="name">Departamento</h3>
-      <p class="location"><i class="fas fa-map-marker-alt fa-lg"></i><span>Jujuy 33, Obera, Misiones - 400104</span></p>
-      <div class="info">
-
-         <p><i class="fas fa-user fa-lg"></i><span>John Deo (dueño)</span></p>
-         <p><i class="fas fa-phone fa-lg"></i><a href="tel:1234567890">1234567890</a></p>
-         <p><i class="fas fa-building fa-lg"></i><span>Departamento</span></p>
-         <p><i class="fas fa-calendar fa-lg"></i><span>10-11-2022</span></p>
-      </div>
-
-      <div class="details-services">
-         <div class="details-box">
-            <h3 class="title">Detalles</h3>
-            <div class="flex">
-               <div class="box">
-                  <p><i class="fas fa-couch fa-lg"></i><span>Amueblado :</span><span>Semi-amueblado</span></p>
-                  <p><i class="fas fa-bed fa-lg"></i><span>Habitaciones :</span><span>2 </span></p>
-                  <p><i class="fas fa-building fa-lg"></i><span>Estado :</span><span>Listo para mudarse</span></p>
-                  <p><i class="fas fa-bath fa-lg"></i><span>Baño :</span><span>2</span></p>
-                  <p><i class="fas fa-door-open fa-lg"></i><span>Balcón :</span><span>1</span></p>
-                  <p><i class="fas fa-layer-group fa-lg"></i><span>Piso de la habitación :</span><span>3</span></p>
-               </div>
+        <div class="details">
+            <div class="thumb">
+                <div class="big-image">
+                    <img src="images/house-img-1.webp" alt="">
+                </div>
+                <div class="small-images">
+                    <img src="images/house-img-1.webp" alt="">
+                    <img src="images/hall-img-1.webp" alt="">
+                    <img src="images/kitchen-img-1.webp" alt="">
+                    <img src="images/bathroom-img-1.webp" alt="">
+                </div>
             </div>
-         </div>
+            <h3 class="name">Departamento</h3>
+            <p class="location"><i class="fas fa-map-marker-alt fa-lg"></i><span>Jujuy 33, Obera, Misiones - 400104</span></p>
+            <div class="info">
 
-         <div class="services-box">
-            <h3 class="title">Servicios</h3>
-            <div class="flex">
-               <div class="box">
-                  <p><i class="fas fa-elevator fa-lg"></i><span>Ascensores</span></p>
-                  <p><i class="fas fa-user-shield fa-lg"></i><span>Guardias de seguridad</span></p>
-                  <p><i class="fas fa-tint fa-lg"></i><span>Suministro de agua</span></p>
-                  <p><i class="fas fa-bolt fa-lg"></i><span>Respaldo de energía</span></p>
-                  <p><i class="fas fa-parking fa-lg"></i><span>Área de estacionamiento</span></p>
-               </div>
+                <p><i class="fas fa-user fa-lg"></i><span>John Deo (dueño)</span></p>
+                <p><i class="fas fa-phone fa-lg"></i><a href="tel:1234567890">1234567890</a></p>
+                <p><i class="fas fa-building fa-lg"></i><span>Departamento</span></p>
+                <p><i class="fas fa-calendar fa-lg"></i><span>10-11-2022</span></p>
             </div>
-         </div>
-      </div>
 
-      <div class="redes">
-         <h3 class="title">Redes</h3>
-         <div class="flex">
+
+            <div class="property-columns">
+
+                <div class="details-box">
+                    <h3 class="title">Detalles</h3>
+                    <div class="flex">
+                        <div class="box">
+                            <p><i class="fas fa-couch fa-lg"></i><span>Amueblado :</span><span>Semi-amueblado</span></p>
+                            <p><i class="fas fa-bed fa-lg"></i><span>Habitaciones :</span><span>2 </span></p>
+                            <p><i class="fas fa-building fa-lg"></i><span>Estado :</span><span>Listo para mudarse</span></p>
+                            <p><i class="fas fa-bath fa-lg"></i><span>Baño :</span><span>2</span></p>
+                            <p><i class="fas fa-door-open fa-lg"></i><span>Balcón :</span><span>1</span></p>
+                            <p><i class="fas fa-layer-group fa-lg"></i><span>Piso de la habitación :</span><span>3</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-box">
+                    <h3 class="title">Servicios</h3>
+                    <div class="flex">
+                        <div class="box">
+                            <p><i class="fas fa-elevator fa-lg"></i><span>Ascensores</span></p>
+                            <p><i class="fas fa-user-shield fa-lg"></i><span>Guardias de seguridad</span></p>
+                            <p><i class="fas fa-tint fa-lg"></i><span>Suministro de agua</span></p>
+                            <p><i class="fas fa-bolt fa-lg"></i><span>Respaldo de energía</span></p>
+                            <p><i class="fas fa-parking fa-lg"></i><span>Área de estacionamiento</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="redes">
+                <h3 class="title">Redes</h3>
+                <div class="flex">
+                    <div class="box">
+                        <a href="#" style="font-size: 20px;"><span>Facebook</span><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" style="font-size: 20px;"><span>Instagram</span><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="title">Descripción</h3>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cupiditate aliquid ipsum recusandae maxime nisi, velit eaque, libero, exercitationem culpa accusamus. Neque dolor quaerat modi saepe facere dignissimos temporibus molestias.</p>
+            <form action="" method="post">
+                <input type="submit" value="Guardar Propiedad" name="save" class="inline-btn" >
+            </form>
+        </div>
+
+    </section>
+    <!-- Sección de vista de propiedad termina -->
+
+    <!-- Sección de pie de página comienza -->
+    <footer class="footer">
+
+        <section class="flex">
+
             <div class="box">
-               <a href="#"><span>Facebook</span><i class="fab fa-facebook-f fa-lg"></i></a>
-               <a href="#"><span>Instagram</span><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="mailto:mydeptos@gmail.com"><i class="fas fa-envelope fa-lg"></i><span>mydeptos@gmail.com</span></a>
             </div>
-         </div>
-      </div>
 
-      <h3 class="title">Descripción</h3>
-      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cupiditate aliquid ipsum recusandae maxime nisi, velit eaque, libero, exercitationem culpa accusamus. Neque dolor quaerat modi saepe facere dignissimos temporibus molestias.</p>
-      <form action="" method="post">
-         <input type="submit" value="Guardar Propiedad" name="save" class="inline-btn">
-      </form>
-   </div>
+            <div class="box">
+                <a href="{% url 'home' %}"><span>Inicio</span></a>
+                <a href="{% url 'about' %}"><span>Sobre nosotros</span></a>
+                <a href="{% url 'contact' %}"><span>Contáctanos</span></a>
+                <a href="{% url 'listings' %}"><span>Todas las Propiedades</span></a>
+            </div>
 
-</section>
+            <div class="box">
+                <a href="#"><span>Facebook</span><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#"><span>Instagram</span><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
 
-<!-- Sección de vista de propiedad termina -->
+        </section>
 
-<!-- Sección de pie de página comienza -->
+        <div class="credit">&copy; copyright @ 2025 by <span>Mydeptos</span> | todos los derechos reservados</div>
 
-<footer class="footer">
+    </footer>
+    <!-- Termina la sección de "Pie de página" -->
 
-   <section class="flex">
-
-      <div class="box">
-
-         <a href="mailto:mydeptos@gmail.com"><i class="fas fa-envelope fa-lg"></i><span>mydeptos@gmail.com</span></a>
-      </div>
-
-      <div class="box">
-         <a href="{% url 'home' %}"><span>Inicio</span></a>
-         <a href="{% url 'about' %}"><span>Sobre nosotros</span></a>
-         <a href="{% url 'contact' %}"><span>Contáctanos</span></a>
-         <a href="{% url 'listings' %}"><span>Todas las Propiedades</span></a>
-      </div>
-
-      <div class="box">
-         <a href="#"><span>Facebook</span><i class="fab fa-facebook-f fa-lg"></i></a>
-         <a href="#"><span>Instagram</span><i class="fab fa-instagram fa-lg"></i></a>
-      </div>
-
-   </section>
-
-   <div class="credit">&copy; copyright @ 2025 by <span>Mydeptos</span> | todos los derechos reservados</div>
-
-</footer>
-<!-- Termina la sección de "Pie de página" -->
-
-<!-- Enlace al archivo JS personalizado -->
-<script src="{% static 'script.js' %}"></script>
+    <!-- Enlace al archivo JS personalizado -->
+    <script src="{% static 'script.js' %}"></script>
 
 </body>
+
 </html>
